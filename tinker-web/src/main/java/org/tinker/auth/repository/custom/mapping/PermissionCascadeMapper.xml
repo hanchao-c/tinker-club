@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tinker.auth.repository.custom.mapper.PermissionCascadeMapper">
+
+	<resultMap id="BaseResultMap"
+		type="org.tinker.auth.repository.custom.model.PermissionCascade">
+		<id column="id" jdbcType="CHAR" property="id" />
+		<result column="permission_name" jdbcType="VARCHAR" property="permission_name" />
+		<result column="permission" jdbcType="VARCHAR" property="permission" />
+		<result column="sequence" jdbcType="INTEGER" property="sequence" />
+		<result column="parent_id" jdbcType="CHAR" property="parent_id" />
+		<result column="icon" jdbcType="VARCHAR" property="icon" />
+		<result column="note" jdbcType="VARCHAR" property="note" />
+		<result column="catalog" jdbcType="TINYINT" property="catalog" />
+		<collection column="id" javaType="java.util.ArrayList" property="permissionCascades" 
+			ofType="org.tinker.auth.repository.custom.model.PermissionCascade"
+			select="getNextNodeTree" />
+	</resultMap>
+
+	<resultMap id="SubResultMap" type="org.tinker.auth.repository.custom.model.PermissionCascade">
+		<id column="id" jdbcType="CHAR" property="id" />
+		<result column="permission_name" jdbcType="VARCHAR" property="permission_name" />
+		<result column="permission" jdbcType="VARCHAR" property="permission" />
+		<result column="sequence" jdbcType="INTEGER" property="sequence" />
+		<result column="parent_id" jdbcType="CHAR" property="parent_id" />
+		<result column="icon" jdbcType="VARCHAR" property="icon" />
+		<result column="catalog" jdbcType="TINYINT" property="catalog" />
+		<collection column="id" javaType="java.util.ArrayList"
+			property="permissionCascades" ofType="org.tinker.auth.repository.custom.model.PermissionCascade"
+			select="getNextNodeTree" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id,
+		permission_name AS permissionName,
+		catalog,
+		permission,
+		authorities,
+		sequence,
+		parent_id AS parentId,
+		icon,
+		note
+	</sql>
+	<select id="getNextNodeTree" resultMap="SubResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM auth_permission
+		WHERE parent_id = #{id}  ORDER BY sequence ASC
+	</select>
+
+
+	<select id="getCascade" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM auth_permission
+		WHERE parent_id = #{parentId} ORDER BY sequence ASC
+	</select>
+
+</mapper>

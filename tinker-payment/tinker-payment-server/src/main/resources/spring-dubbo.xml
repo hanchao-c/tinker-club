@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://dubbo.apache.org/schema/dubbo" 
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://dubbo.apache.org/schema/dubbo 
+		http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+		
+	
+	<dubbo:application name="${spring.application.name}" logger="slf4j">
+		<dubbo:parameter key="qos.enable" value="false"/>
+	</dubbo:application>
+  	
+	<dubbo:registry protocol="zookeeper" address="${dubbo.registry.zookeeper.address}" 
+		file="${user.home}/dubbo-cache/${spring.application.name}.dubbo.cache" check="false"  />
+	
+	
+	<dubbo:protocol name="dubbo" port="${dubbo.protocol.port}" />
+	
+	<!-- provider -->
+	<dubbo:provider id="default_provider_config" timeout="5000" retries="2" validation="true" />
+    <dubbo:service provider="default_provider_config" interface="org.tinker.payment.provider.PayRecordProvider" ref="payRecordProviderImpl"/>
+    
+    <!-- consumer -->
+    <dubbo:consumer id="default_consumer_config" check="false" mock="false" validation="true" />
+    <dubbo:reference consumer="default_consumer_config" id="testValidationProvider" interface="org.tinker.order.provider.TestValidationProvider" />
+    <dubbo:reference consumer="default_consumer_config" id="testObjectConvertResultProvider" interface="org.tinker.order.provider.TestObjectConvertResultProvider" />
+    <dubbo:reference consumer="default_consumer_config" id="testExceptionProvider" interface="org.tinker.order.provider.TestExceptionProvider" />
+    <dubbo:reference consumer="default_consumer_config" id="orderTypeProvider" interface="org.tinker.order.provider.OrderTypeProvider" />
+    
+</beans>

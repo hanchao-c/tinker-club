@@ -1,0 +1,54 @@
+input.error {
+	text-align: left;
+}
+
+label.error {
+	font-weight: bold;
+	color: #EA5200;
+}
+
+th, td {
+	white-space: nowrap;
+}
+
+div.dataTables_wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.uni-el {
+	padding-top: 10px;
+}
+
+.gritter-success .gritter-bottom, .gritter-success .gritter-item, .gritter-success .gritter-top {
+	background: rgb(92, 184, 92) !important;
+	opacity : 0.8;
+}
+
+.gritter-info .gritter-bottom, .gritter-info .gritter-item, .gritter-info .gritter-top {
+	background: rgb(73, 182, 214) !important;
+	opacity : 0.8;
+}
+
+.gritter-danger .gritter-bottom, .gritter-danger .gritter-item, .gritter-danger .gritter-top {
+	background: rgb(255, 91, 87) !important;
+	opacity : 0.8;
+}
+
+.gritter-warn .gritter-bottom, .gritter-warn .gritter-item, .gritter-warn .gritter-top {
+	background: rgb(245, 156, 26) !important;
+	opacity : 0.8;
+}
+
+.colvis-float-right > .dt-buttons.btn-group {
+	float: right;
+	padding-left: 5%;
+}
+
+.sweet-alert > h3 {
+	padding-top: 10px;
+}
+
+td.details-control {
+    cursor: pointer;
+}

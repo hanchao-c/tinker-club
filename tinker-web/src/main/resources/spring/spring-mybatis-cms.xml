@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:p="http://www.springframework.org/schema/p"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans  
+	                        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd  
+	                        http://www.springframework.org/schema/context  
+	                        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+                            http://www.springframework.org/schema/tx 
+        					http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+	               
+	<!-- connection -->
+	<bean id="dataSource-cms" class="com.zaxxer.hikari.HikariDataSource" >
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="jdbcUrl" value="${cms.jdbcUrl}" />
+		<property name="username" value="${cms.username}" />
+		<property name="password" value="${cms.password}" />
+	</bean>               
+	                  
+    <!-- tk -->      
+	<bean id="sqlSessionFactory-cms" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource-cms" />
+	</bean>
+		
+	<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="org.tinker.cms.repository.tk.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory-cms"></property>
+	</bean>
+	
+	<!-- custom -->
+	<bean id="customSqlSessionFactory-cms" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="typeAliasesPackage" value="org.tinker.cms.repository.custom.model"/>
+        <property name="dataSource" ref="dataSource-cms"/>
+        <property name="mapperLocations" value="classpath:org/tinker/cms/repository/custom/mapping/*.xml"/>
+    </bean>
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="org.tinker.cms.repository.custom.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="customSqlSessionFactory-cms"></property>
+	</bean>
+	
+	<!-- transaction -->
+	<bean id="transactionManager-cms" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource-cms" />
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager-cms" />
+	
+</beans>

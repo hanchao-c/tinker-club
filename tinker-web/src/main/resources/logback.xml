@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration>
+
+	<property resource="tinker.properties" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS}) %-5level %C{0}:%L- %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${logger.dir}/tinker.log</File>
+		<encoder>
+			<pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS}) %X{requestId} %-5level %C{0}:%L- %msg%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logger.dir}/tinker.log.%d{yyyyMMdd}</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${logger.dir}/tinker.error.log</File>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS}) %X{requestId} %-5level %C{0}:%L- %msg%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logger.dir}/tinker.error.log.%d{yyyyMMdd}</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+
+	<!-- auth相关sql日志 -->
+	<logger name="org.tinker.auth.repository" level="INFO" />
+	<!-- cms相关sql日志 -->
+	<logger name="org.tinker.cms.repository" level="DEBUG" />
+
+	<root level="INFO">
+		<appender-ref ref="${logger.appender}" />
+		<appender-ref ref="ERROR_FILE" />
+	</root>
+
+</configuration>

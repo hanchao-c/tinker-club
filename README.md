@@ -1,1 +1,1 @@
-# tinker-club
+代码生成前 在tinker-club下执行clean install 把 pom文件安装到本地

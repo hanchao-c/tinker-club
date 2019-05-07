@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd  
+                        http://www.springframework.org/schema/context  
+                        http://www.springframework.org/schema/context/spring-context-4.2.xsd  
+        				http://www.springframework.org/schema/util 
+        				http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+    
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="authorizingRealmBeanProvider"/>
+        <property name="sessionManager" ref="sessionManager" />
+    </bean>
+    
+    <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="shiro_session_id"/>
+        <property name="httpOnly" value="true"/>
+        <property name="maxAge" value="${session.sessionIdCookie.maxAge}"/>
+    </bean>
+    
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="sessionDAO" ref="redisSessionDAO"/>
+        <property name="sessionValidationInterval" value="${session.validation.interval}"/>
+        <property name="globalSessionTimeout" value="${session.timeout}"/>
+        <property name="sessionIdUrlRewritingEnabled" value="false" />
+        <property name="sessionIdCookieEnabled" value="true"/>
+        <property name="sessionIdCookie" ref="sessionIdCookie"/>
+    </bean>
+    
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/login"/>
+        <property name="filterChainDefinitions">
+	        <value>
+	        	/login = anon
+	        	/logout = anon
+	        	/signIn = anon
+	        	/error/* = anon
+	        	/assets/** = anon
+	        	/extra_404_error.html = anon
+	        	/images = authc
+	        	/authc/** = authc
+	        	/forward/** = authc,pageRedirectFilter
+	        	/** = authc,apiAccessFilter
+	        </value>
+	    </property>
+    </bean>
+    
+    <bean class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+    
+</beans>

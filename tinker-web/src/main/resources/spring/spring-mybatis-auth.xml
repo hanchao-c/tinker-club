@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:p="http://www.springframework.org/schema/p"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans  
+	                        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd  
+	                        http://www.springframework.org/schema/context  
+	                        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+                            http://www.springframework.org/schema/tx 
+        					http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+	               
+	<!-- 数据源可根据自己需要替换(如 c3p0,druid,dbcp等),如没有替换,请根据自己需要调整数据源各项参数 -->
+	<bean id="dataSource-auth" class="com.zaxxer.hikari.HikariDataSource" >
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="jdbcUrl" value="${auth.jdbcUrl}" />
+		<property name="username" value="${auth.username}" />
+		<property name="password" value="${auth.password}" />
+	</bean>               
+	                  
+    <!-- 鉴权SqlSessionFactory添加数据源 -->      
+	<bean id="sqlSessionFactory-auth" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource-auth" />
+	</bean>
+	
+	<!-- 配置tkMapper -->	
+	<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="org.tinker.auth.repository.tk.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory-auth"></property>
+	</bean>
+	
+	<!-- 配置自定义Mapper -->
+	<bean id="customSqlSessionFactory-auth" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="typeAliasesPackage" value="org.tinker.auth.repository.custom.model"/>
+        <property name="dataSource" ref="dataSource-auth"/>
+        <property name="mapperLocations" value="classpath:org/tinker/auth/repository/custom/mapping/*.xml"/>
+    </bean>
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="org.tinker.auth.repository.custom.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="customSqlSessionFactory-auth"></property>
+	</bean>
+	
+	<!-- 事务管理 -->
+	<bean id="transactionManager-auth" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource-auth" />
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager-auth" />
+	
+</beans>

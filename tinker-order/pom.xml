@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<parent>
+		<groupId>org.tinker</groupId>
+		<artifactId>tinker-club</artifactId>
+		<version>1.0.0-FINAL</version>
+	</parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>tinker-order</artifactId>
+	<packaging>pom</packaging>
+	
+	<modules>
+		<module>tinker-order-server</module>
+		<module>tinker-order-provider</module>
+	</modules>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.tinker</groupId>
+			<artifactId>tinker-asset</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+	
+	<properties>
+		<order.provider.version>1.0.0</order.provider.version>
+	</properties>
+	
+</project>

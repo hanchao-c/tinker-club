@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tinker.cms.repository.tk.mapper.WatchMapper">
+  <resultMap id="BaseResultMap" type="org.tinker.cms.repository.tk.model.Watch">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="subject" jdbcType="VARCHAR" property="subject" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="brand" jdbcType="VARCHAR" property="brand" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="main_picture_url" jdbcType="VARCHAR" property="mainPictureUrl" />
+    <result column="sub_picture_urls" jdbcType="VARCHAR" property="subPictureUrls" />
+    <result column="tags" jdbcType="VARCHAR" property="tags" />
+    <result column="state" jdbcType="CHAR" property="state" />
+    <result column="last_modifed_time" jdbcType="TIMESTAMP" property="lastModifedTime" />
+    <result column="opertor" jdbcType="VARCHAR" property="opertor" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, subject, price, brand, type, description, main_picture_url, sub_picture_urls, 
+    tags, state, last_modifed_time, opertor
+  </sql>
+  <select id="selectByExample" parameterType="org.tinker.cms.repository.tk.model.WatchExample" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cms_watch
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="org.tinker.cms.repository.tk.model.WatchExample">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from cms_watch
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update cms_watch
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=CHAR},
+      </if>
+      <if test="record.subject != null">
+        subject = #{record.subject,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.brand != null">
+        brand = #{record.brand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mainPictureUrl != null">
+        main_picture_url = #{record.mainPictureUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subPictureUrls != null">
+        sub_picture_urls = #{record.subPictureUrls,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tags != null">
+        tags = #{record.tags,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=CHAR},
+      </if>
+      <if test="record.lastModifedTime != null">
+        last_modifed_time = #{record.lastModifedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.opertor != null">
+        opertor = #{record.opertor,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update cms_watch
+    set id = #{record.id,jdbcType=CHAR},
+      subject = #{record.subject,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DECIMAL},
+      brand = #{record.brand,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      main_picture_url = #{record.mainPictureUrl,jdbcType=VARCHAR},
+      sub_picture_urls = #{record.subPictureUrls,jdbcType=VARCHAR},
+      tags = #{record.tags,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=CHAR},
+      last_modifed_time = #{record.lastModifedTime,jdbcType=TIMESTAMP},
+      opertor = #{record.opertor,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

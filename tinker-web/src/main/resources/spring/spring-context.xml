@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:p="http://www.springframework.org/schema/p"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd  
+                        http://www.springframework.org/schema/context  
+                        http://www.springframework.org/schema/context/spring-context-4.2.xsd  
+                        http://www.springframework.org/schema/mvc  
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+
+	<bean id="propertiesFactory" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:mysql.properties</value>
+				<value>classpath:redis.properties</value>
+				<value>classpath:shiro.properties</value>
+				<value>classpath:zookeeper.properties</value>
+				<value>classpath:tinker.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="propertyPlaceholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="properties" ref="propertiesFactory" />
+	</bean>
+	
+	<!-- 扫描 @Service @Repository @Component -->
+	<context:component-scan base-package="org.tinker" use-default-filters="true">
+		<!-- 排除@Controller -->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+	<import resource="classpath:/spring/spring-shiro.xml"/>	
+	<import resource="classpath:/spring/spring-redis.xml"/>			
+	<import resource="classpath:/spring/spring-mybatis-auth.xml"/>	
+	<import resource="classpath:/spring/spring-mybatis-cms.xml"/>
+	<import resource="classpath:/spring/spring-dubbo.xml"/>
+	
+</beans>
