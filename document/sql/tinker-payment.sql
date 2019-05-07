@@ -1,0 +1,88 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 50722
+ Source Host           : localhost:3306
+ Source Schema         : tinker-payment
+
+ Target Server Type    : MySQL
+ Target Server Version : 50722
+ File Encoding         : 65001
+
+ Date: 07/05/2019 15:59:33
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for payment_pay_record
+-- ----------------------------
+DROP TABLE IF EXISTS `payment_pay_record`;
+CREATE TABLE `payment_pay_record`  (
+  `id` char(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键',
+  `amount` decimal(10, 2) NULL DEFAULT NULL COMMENT '支付金额',
+  `order_id` char(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '订单id',
+  `payment_state` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '支付状态',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '支付时间',
+  `notice_state` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '通知状态',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of payment_pay_record
+-- ----------------------------
+INSERT INTO `payment_pay_record` VALUES ('06ef69d2353e4b7599f40c32db4aff61', 13.00, '8668a87ff646473b8ed7dd85605467ce', 'SUCCESS', '2015-06-03 11:10:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('0f8cf82a30374824b841986c03c86bf3', 2.00, '9a92f31b658544199c77993513290e96', 'SUCCESS', '2013-12-17 20:22:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('15f4426b99314e7b963e7c4b48451394', 17.00, 'ae2b9df1a613444c8b93562c7ba797f2', 'SUCCESS', '2000-08-19 11:55:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('17db0a4193524b98bfd51856cf71b538', 1.00, 'cef6dbf1c59b4dd2b1f252cf7df0925a', 'SUCCESS', '2014-11-23 20:51:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('22aa1ea4cf0542beb5af66d41ccd13d9', 12.00, 'b99a5a17618047d0892a6ebf8372effd', 'FAIL', '2005-12-22 15:07:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('28c00cf5263b46d2aaf072d6eef32cd0', 29.00, '65a4b63e564c4024bc36d97ec85a592c', 'SUCCESS', '2006-01-04 02:22:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('299ce4a71b584618bfef429bb2a3871b', 20.00, '7522d6d91d454da0a518701e7a1eb822', 'SUCCESS', '2000-05-23 16:28:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('31b4c306c2a04ef88fcde74e4d63a139', 11.00, '39c36f49fee341fbb28012c09486b4fc', 'SUCCESS', '2009-10-27 00:46:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('3636e422b62644c0943d20b42509b1f4', 29.00, '66cf3810eca74a72b11a755722546720', 'SUCCESS', '2008-04-25 22:39:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('3dbf3614f6a8465c805cd71fa89101fc', 9.00, 'c08279f07a7e40ee89206be8e15d4b18', 'SUCCESS', '2012-03-24 10:17:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('3def85ab2bd2481c9274129b30143936', 26.00, 'bd50156afcdf474d864438523deb59ed', 'FAIL', '2019-01-20 05:23:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('3e7d337494254a1a9343309108118e95', 27.00, 'f4b0ba8ab88d4a98b93f7bf8087152ad', 'FAIL', '2011-04-24 15:49:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('4c7e679114344d8998ae11e7a681dc65', 24.00, '5cac185e7f3a42c8a1376b77cbb4b2ae', 'FAIL', '2013-12-31 19:51:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('52d6ceb41b72479f8a9c73355a032c2f', 6.00, '96f0f46382534ddd86aa26051cf4560a', 'FAIL', '2007-03-20 04:02:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('54756e64af1847e899cf7eec22de9742', 17.00, 'fa226280404040f3b2845d0a37974dc7', 'SUCCESS', '2007-08-02 11:16:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('548815b06ad04fea9ac9e6fa897b2ea3', 10.00, 'dd19c5d9d6934528adc962ca66748b89', 'FAIL', '2007-05-17 17:04:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('59f4643bd6dc45ef89c91999eea260a7', 12.00, '393f08ce86a94ed2a6bdeff391364fb6', 'SUCCESS', '2015-07-25 11:31:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('6becbba298f445d99d963b4cf228b868', 1.00, '9c9d2cc367354afb9aa00fb59c141c19', 'FAIL', '2006-09-01 23:51:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('6eb0f24817204a6a80b643f5dc7dd1ce', 10.00, '3ed2222ac7b7478287a9f15c5d762093', 'FAIL', '2003-09-25 22:58:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('70c855af23774118920971a8f6e313c5', 14.00, 'ee57b0bd8c9f402abdd75e5702cba901', 'SUCCESS', '2007-09-18 23:15:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('726397f71472423c9aa86e42a7092a18', 11.00, '5c22882260874e9b9d3d6b56b2787ec6', 'SUCCESS', '2001-10-11 18:31:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('761f50b130cc4d4caa7dd89ccfdcebd7', 4.00, '20207b336bd94d39a54c33465a939aa2', 'SUCCESS', '2007-07-01 12:05:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('783e54b49ad24f85ad99ba72c236c101', 1.00, '84274f385fc74d24a79eb7a3bdb24cd2', 'SUCCESS', '2017-07-22 11:39:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('7d26223df27449d5aa37cc9e5d1c8cde', 27.00, '892d507be9bf45499fad7d3d600797de', 'FAIL', '2007-07-15 11:14:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('80f91255dc5f4e17b3ca29f608cad18f', 22.00, 'ae37ae4560844595a577b6b924a59593', 'SUCCESS', '2005-05-06 00:54:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('819d18eb79a2441dbead562a62bfa0cd', 20.00, '72e8619a7af44424946e8688343a91c7', 'SUCCESS', '2006-09-22 21:56:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('8446572db71a4cc3aa34115c29c3842f', 5.00, 'd0b849ec6fc6446e9e74aa74a2d302f8', 'SUCCESS', '2017-01-26 01:38:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('89af504f63ed4ccf90563186ca4c0cee', 4.00, 'a0a379dc672847f481663a52759ddd5a', 'SUCCESS', '2015-04-10 14:42:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('9d6c65514a2840ba8d985d19cbe671fb', 28.00, 'e91b414bc9184495a65b416490dfaf5d', 'FAIL', '2004-07-24 04:19:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('b0da13559efd45808226bf0f38e70a21', 28.00, '351a755e4008498799a28fc854c59115', 'SUCCESS', '2003-06-10 23:15:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('b459c14267794094a08bd6e969e79d70', 4.00, '5231847b12f24633980c92838e3e6cd4', 'SUCCESS', '2003-02-17 03:16:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('b7e49ac99d90496eae96fd7fa43e7da0', 18.00, '858e28f4fa0243248ad52c897204156b', 'FAIL', '2006-10-24 03:16:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('bd9c8af703da429f8b2fe67dacc4f45e', 25.00, 'ae6aa974555b44739465c5e8e890d07f', 'SUCCESS', '2006-11-20 15:07:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('be9ec06ae27a48909c1a7ad61af812be', 18.00, '7b6ec7c11a69430f9208e1f42bb4b8b1', 'SUCCESS', '2002-12-17 13:24:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('bf932d1e70434cb395f83215d4b36c29', 21.00, 'a93de463ade7444fb44da8603b70fd0a', 'FAIL', '2006-09-01 04:12:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('bfa492e1f21d4492bedb8fc573049e04', 9.00, '3d052b51a46d444684bc6d10b39a0a5c', 'SUCCESS', '2010-03-07 07:28:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('c13ebb343abd4a60878924070cf862bf', 25.00, '24b83e030c6145d99242e278fc62dea5', 'SUCCESS', '2006-01-09 15:30:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('c328da1f739f4cce9297a48635356524', 13.00, '46d4965254864559859767a78458da97', 'SUCCESS', '2014-09-24 13:20:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('c5fe7c263e2e4d6ab76bd6210a1326bd', 6.00, '9bc6b647e96940a5a458b4895021a003', 'FAIL', '2011-12-30 10:13:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('c78362a5ab604e43a7cd0fb3ceba2b66', 17.00, '3b5b3f113a3544afba48453850249d40', 'SUCCESS', '2012-12-22 16:00:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('cb19ba62df7d4733b45b089dffbb72c9', 27.00, 'e379e82755134572854a8188ff744b42', 'FAIL', '2014-03-09 00:25:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('cba1faeb746f4096bbeb348974f2c641', 23.00, '22dc241a23b146fba3f0562d817d6b4a', 'SUCCESS', '2009-02-16 08:29:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('d49dde41fa7d47cebd6d3c2d912c2482', 20.00, '97a9f0f9795d4fc1b263e31fa095cae3', 'SUCCESS', '2013-02-25 17:07:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('d6b158dff50541b892d66981fd99955e', 6.00, '5c1bcbe6e1bf4539a7ae21d34f4724cb', 'SUCCESS', '2011-05-15 04:07:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('d752962695dc436ca8210e718a9d68a9', 19.00, 'bee95bd3084f4ff99d1f249decba23cf', 'FAIL', '2014-04-28 06:43:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('dafe1ae71baa4ad58388e8685fc14c46', 25.00, '74028a6266914ab9919b47a561104cc3', 'SUCCESS', '2013-08-27 11:14:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('dfacc8f1506c4a5eb7c63519ceb6a40c', 6.00, '202e350eeafb4f7e9244b0fec09f6c0d', 'FAIL', '2007-06-13 03:37:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('e5059a5df3304972ac457fc0f025a631', 28.00, 'f109d0152b09497f91862c656a60b330', 'SUCCESS', '2009-08-13 00:22:57', 'SUCCESS');
+INSERT INTO `payment_pay_record` VALUES ('e7572331350d43719d71dacf8be58487', 16.00, 'a5df2661c3be4f40b0f6ffa7a5993ec2', 'FAIL', '2007-04-20 15:29:57', 'FAIL');
+INSERT INTO `payment_pay_record` VALUES ('fda1aa5c01494a309102523f52efe56f', 12.00, '90e1a42de9d940658f8e08eb14e537fe', 'SUCCESS', '2012-03-22 18:52:57', 'SUCCESS');
+
+SET FOREIGN_KEY_CHECKS = 1;

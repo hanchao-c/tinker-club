@@ -1,0 +1,172 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 50722
+ Source Host           : localhost:3306
+ Source Schema         : tinker-order
+
+ Target Server Type    : MySQL
+ Target Server Version : 50722
+ File Encoding         : 65001
+
+ Date: 07/05/2019 15:59:26
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for order_uncompleted_order
+-- ----------------------------
+DROP TABLE IF EXISTS `order_uncompleted_order`;
+CREATE TABLE `order_uncompleted_order`  (
+  `id` char(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主键',
+  `user_id` char(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户id',
+  `order_id` char(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '订单id',
+  `product_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '商品名称',
+  `amount` decimal(10, 4) NULL DEFAULT NULL COMMENT '价格',
+  `pay_state` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '支付状态',
+  `order_state` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '状态',
+  `payment_times` int(11) NULL DEFAULT NULL COMMENT '支付次数',
+  `order_time` datetime(0) NULL DEFAULT NULL COMMENT '下单时间',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '记录创建时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of order_uncompleted_order
+-- ----------------------------
+INSERT INTO `order_uncompleted_order` VALUES ('0288187e00a74b889c4158303224dfda', '4a0690900adf4bf2a41744f2f1f7ba4c', 'b092575bc77f4f65aa3a42dd092e5433', '黄鹤楼', 13.0000, '0002', 'OPEN', 4, '1985-09-13 09:41:14', '2003-09-21 03:02:14');
+INSERT INTO `order_uncompleted_order` VALUES ('034bda6c55a14661a8f6f18c71f3d04a', '8d1b7eacc5a04d058fd7541d26ebcb5d', '8a54d4f547024502bc8b06035fb050c0', '黄鹤楼', 19.0000, '0002', 'STOP', 0, '2015-10-17 15:28:15', '2015-12-22 22:05:15');
+INSERT INTO `order_uncompleted_order` VALUES ('039cfec192054364b29ec07f8434855e', '2222b74ff0014758bd9d9d6ff2ab9108', 'c1997a774e0948d1a0f6b2058460526c', '长白山', 13.0000, '0002', 'STOP', 8, '1998-05-23 06:44:18', '2005-03-03 20:55:18');
+INSERT INTO `order_uncompleted_order` VALUES ('03f90659f8624d818188d373a777b314', '5e41a20288ed49a2ae3a7e966d3486de', 'd86b554f87bb4fb8a4c5c67e80b381ac', '小熊猫', 11.0000, '1001', 'OPEN', 0, '2001-06-18 15:17:18', '2008-06-18 03:24:18');
+INSERT INTO `order_uncompleted_order` VALUES ('0b5f98fc21f34faa82405eb04f6c8e8d', '9281679ebbb84561806038b840fc48ae', 'dcb84f3c021547f58a96cf8f5916b356', '芙蓉王', 17.0000, '0002', 'DELAY', 4, '2013-07-03 00:42:17', '2014-03-01 22:45:17');
+INSERT INTO `order_uncompleted_order` VALUES ('0d913b755e054fd99610a6687c93ca46', '64ff2b6af37f4070a968c22f55769528', 'e0983be5c6be4590a2b4dd10d146563e', '芙蓉王', 7.0000, '0003', 'OPEN', 4, '2007-07-11 05:44:18', '2008-12-18 18:57:18');
+INSERT INTO `order_uncompleted_order` VALUES ('0e519bb165694904875d20e85c5654a7', 'f03dfb0d81f343dbaf25a3af26587ce5', 'd6b3a773242d4408b6b442a53c82cf93', '利群', 5.0000, '1001', 'OPEN', 1, '1994-01-27 21:16:17', '2011-10-16 15:36:17');
+INSERT INTO `order_uncompleted_order` VALUES ('0ef58e15bcc24ad1ba416bba763dfa8c', 'e18406f85b8741359cd2bf0406ba89b5', '835244376c06420e83a00189a6d5a5e0', '红塔山', 0.0000, '0001', 'UN_KNOW', 7, '2005-06-11 23:06:14', '2007-07-04 20:22:14');
+INSERT INTO `order_uncompleted_order` VALUES ('11b2282570ad4451ba0fb9e3ae7c6ac7', 'e9ac7c2e7c1b4e5babc157bcda13d453', '5d54e3f6784e47d295bc7d20b62005f9', '芙蓉王', 10.0000, '0001', 'DELAY', 3, '2011-04-17 06:53:16', '2017-10-28 10:35:16');
+INSERT INTO `order_uncompleted_order` VALUES ('13b48d79fe3f47a2ae8c2bca3486b8fb', 'f3d93e3246824b28ae90c746026600c3', 'a454b1cbcadc4114badf2a405f9ebf68', '红塔山', 10.0000, '0002', 'CLOSE', 3, '1997-04-26 21:05:15', '2010-05-09 09:35:15');
+INSERT INTO `order_uncompleted_order` VALUES ('19366842af9f4d4fbc4dee79106b9191', '7ba94aafb4a649288ee6f73d6e90609a', '5f2754c6037249169695aa6bfbf0fc3c', '黄鹤楼', 4.0000, '0001', 'DELAY', 6, '2005-03-12 07:59:14', '2007-03-17 00:38:14');
+INSERT INTO `order_uncompleted_order` VALUES ('19c8612de964451e902bc0379ccc603b', 'b051c24abefe4c74b6a8da9421eacf8d', '13cdc10a5dde46eb88764ad8fa6fd8a4', '黄鹤楼', 24.0000, '0003', 'CLOSE', 0, '2012-07-26 07:15:14', '2014-11-30 14:33:14');
+INSERT INTO `order_uncompleted_order` VALUES ('1ac364166089435592186b436202bc9d', '1ecf10819f5c4353a67079e01ff461f0', '5a73e957af9048ffb64efc80373b078f', '红塔山', 12.0000, '0001', 'UN_KNOW', 7, '1992-09-09 18:31:13', '2010-07-24 05:17:13');
+INSERT INTO `order_uncompleted_order` VALUES ('1ad0baf576e444f097330a40d5738b53', 'f93dc9c2349b4fa1a8f528b237b658a0', '9a771335606147acb7b3b737dd3c95fe', '利群', 10.0000, '0003', 'DELAY', 0, '2000-10-11 23:48:15', '2002-08-12 21:49:15');
+INSERT INTO `order_uncompleted_order` VALUES ('1c1008f3a63f48b9b27cee09ff23e8e6', '99edd2507c4c44f699827fc3c58f1d5f', 'be598414b16341b09e4e8f148f54f873', '黄鹤楼', 8.0000, '1001', 'UN_KNOW', 3, '1998-01-23 15:46:13', '2007-08-13 12:21:13');
+INSERT INTO `order_uncompleted_order` VALUES ('1cc749eb6cc4440cb4aabbaad7f48065', '1ea83c717194431d84fd6a3645d81f30', '73bbf012b1a44ac89b576ccc95869c0d', '红塔山', 3.0000, '0002', 'OPEN', 7, '2000-09-30 23:31:17', '2019-01-20 13:37:17');
+INSERT INTO `order_uncompleted_order` VALUES ('1fb5be2427754d95a1e2d6d868c0259c', '720102817fa5472ea134e33c452499e5', '3e149853d4814c7386d19b7aa66054f8', '长白山', 0.0000, '0001', 'UN_KNOW', 5, '2013-05-14 06:11:18', '2013-06-19 11:13:18');
+INSERT INTO `order_uncompleted_order` VALUES ('2075ac24fa064695bc7d4dd515d98e4d', '1da1289f060c4f5faf3ba2ae42de524e', '7005f0805d6c409eb6e3e4705332d881', '长白山', 24.0000, '1001', 'CLOSE', 3, '2000-06-23 16:00:17', '2007-02-05 23:16:17');
+INSERT INTO `order_uncompleted_order` VALUES ('22e7ab48b48d4a248b9342665c65c35f', 'a8bce234e8d44ea8838e7b726d4f6bd5', '30f616f1f0104d169b34f811a6c34dea', '利群', 15.0000, '0001', 'STOP', 9, '2010-06-07 01:41:16', '2014-04-14 22:14:16');
+INSERT INTO `order_uncompleted_order` VALUES ('237793a7434f4fc0ba791514b87850e8', 'bec2c243ed324603bc4154c7c3765bce', 'b413f876c9bb40b3a01b5a30808755aa', '芙蓉王', 11.0000, '0002', 'CLOSE', 9, '1998-05-25 11:21:15', '2001-06-30 11:09:15');
+INSERT INTO `order_uncompleted_order` VALUES ('2aef9ff0843b441c9844eef1fd4a2450', '4255b018aa5c423f85c9a5e178c44b3b', 'cb030942d38b4a58874608fab846b909', '黄鹤楼', 4.0000, '0002', 'DELAY', 8, '1996-08-21 20:17:16', '2012-05-31 04:33:16');
+INSERT INTO `order_uncompleted_order` VALUES ('2c2083e966664633aa01d4f1fd09c0a9', '1d748acaa33a4665a4e1f057f1a0720e', 'c706cb9b2cf54c2c8b392bdee28e7083', '黄鹤楼', 15.0000, '1001', 'CLOSE', 0, '1995-10-15 15:15:18', '2007-12-25 07:57:18');
+INSERT INTO `order_uncompleted_order` VALUES ('2dab6f6d0c9340c7922b1b15bd4e707c', '0e14fd3d1d6c4149bc2b5013737364f4', '1b021938ca3849f28a06129e781e31c6', '芙蓉王', 20.0000, '0002', 'CLOSE', 2, '2003-10-16 21:56:15', '2004-04-08 02:33:15');
+INSERT INTO `order_uncompleted_order` VALUES ('2fb12c511c534fd7b43607798456bcce', 'f5f5eea5a3344c6488b8a7b1618a83ab', '2deb9a2483564bfc9fbf4c3b3716406d', '芙蓉王', 24.0000, '0003', 'UN_KNOW', 4, '2000-04-24 23:56:17', '2011-06-05 10:36:17');
+INSERT INTO `order_uncompleted_order` VALUES ('300f073502c7462bbbd779dbb19b2a36', 'cb371666b14a40a2bbeab5a035739a54', '54e95ee72b0a4d0c817823df8842b68f', '芙蓉王', 1.0000, '0001', 'CLOSE', 7, '2006-07-09 11:49:17', '2017-06-19 14:19:17');
+INSERT INTO `order_uncompleted_order` VALUES ('3333b23ddcc34f30ad339d9030f3020e', 'f4ca8e5118544f60b1504b806662c6dc', 'cee24ab6de7d4ff6b1c383e46c8b026c', '红塔山', 3.0000, '0002', 'CLOSE', 7, '1988-10-28 10:57:17', '2005-11-07 04:05:17');
+INSERT INTO `order_uncompleted_order` VALUES ('36061ca0755d43808874a1f222692634', '298b47eb1c384d7aa0fdd42bccc0fdaa', '8bf76dcb113f4b89867a39ace8ff69ca', '长白山', 15.0000, '0003', 'OPEN', 8, '2003-04-04 00:03:15', '2008-05-26 12:34:15');
+INSERT INTO `order_uncompleted_order` VALUES ('36fcbb95ec794ca8a73ee14baa93d9d5', 'b916a9c8505f4186a8c851c7dca03ae7', '3c520e31b08a4c8f8c0ad8ac9cc9fb91', '黄鹤楼', 20.0000, '1001', 'DELAY', 2, '1990-06-16 17:46:14', '2002-12-11 00:46:14');
+INSERT INTO `order_uncompleted_order` VALUES ('394ac02b17eb44e2b4f117ae6dba6bf4', 'ae434149b3184441b2456fc335a2542d', '9339d2ba6dee4b5ab0b177495150096e', '红塔山', 10.0000, '0003', 'UN_KNOW', 9, '2012-11-26 23:10:18', '2015-09-23 04:22:18');
+INSERT INTO `order_uncompleted_order` VALUES ('3b0f798f4fd54a1faa0c977af512111d', 'b1979238dd0f4951b25fb88f8d31b038', '1a34e23f3d99476fa7ddeec83d5b5d5d', '红塔山', 14.0000, '0002', 'CLOSE', 6, '2006-01-15 02:28:18', '2016-06-16 18:41:18');
+INSERT INTO `order_uncompleted_order` VALUES ('44a9e30dcd5b4a038eaf501fbc85d0a5', 'cc8be6f90946454c9d8da9e197accb3c', '749955ad56444969b06864a31d73b7ed', '雪茄', 8.0000, '1001', 'DELAY', 1, '2001-05-08 21:48:15', '2014-05-04 18:03:15');
+INSERT INTO `order_uncompleted_order` VALUES ('4514d4dc8fe04537b9dc3c52c3222dd7', '1d05612194c348339387e72bfe3c7c23', '9ef5e9e16f25437ca29c728bb4c96b78', '红塔山', 9.0000, '0001', 'UN_KNOW', 1, '2002-08-23 04:08:15', '2017-02-27 11:35:15');
+INSERT INTO `order_uncompleted_order` VALUES ('45f920873f6e44f6a1e691995fb67d2c', '1c47934a4909427dbc00aeda0161e7ec', '9925f15196474dab99540d5ad3ef9490', '利群', 9.0000, '1001', 'UN_KNOW', 9, '2004-07-01 19:13:13', '2006-12-29 12:01:13');
+INSERT INTO `order_uncompleted_order` VALUES ('4752308e9a2f4547965908342370de9e', '2f419e02328143bcbcfcff54c9352ac3', 'da77460b7c7a40c19fd9c18f81f3a1d9', '红塔山', 29.0000, '0002', 'OPEN', 3, '2010-10-25 18:16:16', '2011-04-04 10:07:16');
+INSERT INTO `order_uncompleted_order` VALUES ('482dfb900abc43908dae3f307a693662', '7d3474ccb42b4c65a88fb8669a85c322', '20cc7525a93343f798891cbc73ac37f9', '雪茄', 22.0000, '1001', 'STOP', 3, '1994-06-21 20:33:18', '2006-12-13 16:18:18');
+INSERT INTO `order_uncompleted_order` VALUES ('48e5e94ac5e0483ba0678bb9a6bb697b', '777bf06fc520403e829af5c1ef3eeaf9', 'fbaca128ecce4caba3069400199be2fd', '黄鹤楼', 4.0000, '1001', 'STOP', 4, '2010-09-17 18:17:13', '2017-10-23 06:16:13');
+INSERT INTO `order_uncompleted_order` VALUES ('4a069e4c87c34436a1cf225cf19e2b19', '88ebfb65298a40538eeb375030eff038', '38b065fce9b54f4c9f665191a6b4170e', '长白山', 4.0000, '0001', 'UN_KNOW', 1, '2001-07-27 01:23:17', '2009-08-19 07:22:17');
+INSERT INTO `order_uncompleted_order` VALUES ('4cc55c859394466d9fbd4c809f829499', 'c8dc67d0fb334a00b2cd32724f7e2b04', '0a4f0c61cec34c0b96825847f2a87e53', '长白山', 25.0000, '0002', 'STOP', 2, '1997-11-29 03:37:16', '2016-06-27 12:34:16');
+INSERT INTO `order_uncompleted_order` VALUES ('4ce53a9e19f64b38a41f388e170e4ea0', 'b9a27ac5d6d04834b5311338b19d49ee', '02e0996c2501499b8ff9041b8ccb5c0b', '利群', 13.0000, '0001', 'UN_KNOW', 2, '1989-03-25 00:08:15', '2007-03-02 14:38:15');
+INSERT INTO `order_uncompleted_order` VALUES ('535dd79cf36e4723a3956036573e1862', '2eac5012f70b456cbacbe58038b1a6a0', '421053416195485c8e6c64aba1c9e824', '芙蓉王', 17.0000, '1001', 'STOP', 6, '1999-04-20 09:10:17', '2006-04-12 11:20:17');
+INSERT INTO `order_uncompleted_order` VALUES ('55e91a54e4554a5db62c49b347bbc8c8', '23fbe6929adc4095956664727392962b', '78c8d20bf6994671b2ddb025dc7283d6', '红塔山', 1.0000, '1001', 'STOP', 2, '2004-11-21 17:27:17', '2017-08-27 01:28:17');
+INSERT INTO `order_uncompleted_order` VALUES ('55fb73b38e804951b7b52c686ba8bed2', '261dfbb2750d4d558b55508d663d208e', '5e4436325a004e69a3acfe4ad89b9e8d', '雪茄', 24.0000, '0001', 'STOP', 1, '2005-11-11 05:10:13', '2019-02-11 15:31:13');
+INSERT INTO `order_uncompleted_order` VALUES ('56bfe43cea4d4192857efb55bf6bfd80', '95fe493e0400436594ce512da9f7ce50', 'bb5bbc6dec8b4dee92522d3c7704cf0a', '长白山', 18.0000, '0003', 'UN_KNOW', 0, '2002-02-14 01:51:15', '2008-05-10 22:06:15');
+INSERT INTO `order_uncompleted_order` VALUES ('59b08f72a3d64dc88007dd859bd4c36e', '2062800212c5449d979642f8dc456544', 'c8a93d474c814608a1581e279b142f4f', '长白山', 16.0000, '1001', 'CLOSE', 6, '1995-11-03 06:10:15', '2006-05-10 06:11:15');
+INSERT INTO `order_uncompleted_order` VALUES ('5b27833f5bb04d1dac0f7cfa3cecb157', 'a2aa3a65257b4440a74f2468d237d8cc', 'dfc355cd4772422ea7d3445c0ec31ca7', '红塔山', 23.0000, '1001', 'CLOSE', 0, '1982-11-09 01:39:18', '2000-08-11 11:19:18');
+INSERT INTO `order_uncompleted_order` VALUES ('5c61e2009a88400c9af441f3a1ce00f2', '85d12b185e7347ac951537aa38c9b42a', '3bdf9639c42a450c9278432f139452b4', '小熊猫', 9.0000, '1001', 'CLOSE', 7, '2007-07-22 17:32:12', '2014-12-08 10:03:12');
+INSERT INTO `order_uncompleted_order` VALUES ('5c69627aab144de38f53a789ea481b89', 'd0075508417241a08b595a7887b817dc', '25d28847abd94bafa524ef46efea0d17', '长白山', 17.0000, '1001', 'UN_KNOW', 1, '1992-05-11 03:28:19', '2010-03-13 16:02:19');
+INSERT INTO `order_uncompleted_order` VALUES ('5ced15b8e46f4492ab57eddc2e247676', 'b888c4fd8f854626a5f3b8d17972b064', 'fa70c0581e484dd19996d40c4ea99b09', '长白山', 26.0000, '1001', 'STOP', 4, '2004-12-23 03:54:14', '2011-09-21 12:50:14');
+INSERT INTO `order_uncompleted_order` VALUES ('5e38a85e29e84c3daab1ea35577c7067', '8b4c5dc5c9344e88816c4a778d8088e4', '392ed74dc6ef49469a52737c5b12271b', '长白山', 2.0000, '0003', 'DELAY', 3, '2005-09-13 09:43:13', '2019-01-19 21:40:13');
+INSERT INTO `order_uncompleted_order` VALUES ('60c8f90be83744c8b04118c6dff0221c', 'c9918b2096c44544815273a1c61ea050', '76a49b39b3fb410983c6235573324ec2', '利群', 8.0000, '0002', 'OPEN', 9, '1987-03-21 12:53:14', '2003-04-09 18:25:14');
+INSERT INTO `order_uncompleted_order` VALUES ('63b0b70f2ebc4c3a94cc18be8568230d', 'ec511703e86e482a9bd13dbe3be346b4', '68f6720e2f4f4e438b374e5ae8fc5ee0', '利群', 0.0000, '0001', 'CLOSE', 3, '1993-05-03 16:28:18', '2003-12-04 19:35:18');
+INSERT INTO `order_uncompleted_order` VALUES ('643e252f3edf44cc8e8310564af864bb', 'c75ff503210d4125bd5d25616104495f', 'a59a5ff7d6b44d5aa019b9598e928dd3', '红塔山', 1.0000, '1001', 'UN_KNOW', 2, '2001-08-29 12:13:15', '2017-04-14 04:12:15');
+INSERT INTO `order_uncompleted_order` VALUES ('67a48c10f940442a90c6486d27317f0d', '3bc45f78c43343638e1a5a4e30cb649f', '1fa866f1c814432f93b2b9bd9f34a9cd', '利群', 13.0000, '0002', 'STOP', 1, '2016-08-01 12:33:14', '2017-06-14 13:20:14');
+INSERT INTO `order_uncompleted_order` VALUES ('67baaa1dcc1a49d19f60b43f38204296', '5c8ed336f29448a1abc9022a6ed320b5', '8dbbca0db97541f5bc7c983a927661b0', '黄鹤楼', 13.0000, '0003', 'OPEN', 9, '2005-11-17 04:20:16', '2006-03-11 15:05:16');
+INSERT INTO `order_uncompleted_order` VALUES ('68b8afea7a3349599d7095733f5a0af2', '9daa4d43187449d3a24a6570836851d7', '7d728adaaf684c759298d1e135b7c9c0', '红塔山', 14.0000, '0002', 'DELAY', 8, '1997-11-18 19:26:16', '2005-10-22 19:40:16');
+INSERT INTO `order_uncompleted_order` VALUES ('6920ef5496934217b03019756afef114', '7199043821604928b6273896f8e729f5', '61f3b3c22631401f85db101f190e6786', '长白山', 6.0000, '0002', 'UN_KNOW', 3, '1992-02-03 11:00:18', '2008-02-06 10:43:18');
+INSERT INTO `order_uncompleted_order` VALUES ('6a546fc66249495bae1ca895365f4e1f', '1c0902cd346f408a8237776974e18e75', '6e9a213ec7164ef59c9b948bc522bfb0', '小熊猫', 21.0000, '1001', 'DELAY', 0, '1993-04-12 16:34:15', '2009-07-26 09:05:15');
+INSERT INTO `order_uncompleted_order` VALUES ('6d341f0c1e504a6b97a1f21d84ac39f2', '98c1235d3b314a30919af6dc8b60a2c1', '1f6f6ad65e1b4510b015c9b1fccb297c', '长白山', 6.0000, '0003', 'UN_KNOW', 7, '2004-09-26 03:18:18', '2014-09-20 08:19:18');
+INSERT INTO `order_uncompleted_order` VALUES ('6eb9b219dba34861872e46b2848474e3', '39986cd4cd814ed59de352693966f229', 'd40f9aede8674a3ea0ac5667ca9cff81', '利群', 4.0000, '0002', 'DELAY', 9, '1996-01-02 03:21:15', '2002-10-21 08:58:15');
+INSERT INTO `order_uncompleted_order` VALUES ('715a83231fde43cb811c16cbbc8ebf11', 'a53e4832689140518d5df67c94d88f42', '7d4bd40d2761494f9fe0abecc3d0c16e', '黄鹤楼', 26.0000, '0001', 'CLOSE', 8, '2004-04-19 03:56:19', '2014-05-13 03:32:19');
+INSERT INTO `order_uncompleted_order` VALUES ('71c1cfce363b4ff48091c25bbe9bbb8f', '770b833ece764e6ebdfd7a5f2781de6e', 'd6d6c84d1eb8410695039e61e289d087', '长白山', 1.0000, '0002', 'DELAY', 7, '1995-10-25 09:54:15', '2010-01-30 04:57:15');
+INSERT INTO `order_uncompleted_order` VALUES ('730476a379ec484588af092298e37cc7', '07de8d2b95434263aacaf6e0b69e445f', '7dfec6fafd07493ab808dda5edee474a', '利群', 29.0000, '0002', 'CLOSE', 8, '2010-04-14 14:29:14', '2014-10-03 10:13:14');
+INSERT INTO `order_uncompleted_order` VALUES ('73ed286d67b446f3851ea70a77b74022', '2a6a769dbaa044f285f277f4ccb05e21', '643e352b92bc4ec69f6c85d4e9f97db2', '长白山', 22.0000, '0002', 'UN_KNOW', 6, '1996-09-24 04:33:16', '2008-09-11 17:54:16');
+INSERT INTO `order_uncompleted_order` VALUES ('74a85d7994e3453a94acfbd3e9acb7c7', 'e9eabeef4a5f45bd926336afc44c5dc1', '7877261f4c7849599c9ed90d1ab99d18', '黄鹤楼', 19.0000, '0002', 'STOP', 1, '1984-09-22 08:03:17', '2000-11-08 20:53:17');
+INSERT INTO `order_uncompleted_order` VALUES ('7654e6dcf7084914b8c6564b2df26a6b', '4a6094ddeaab4489aaf89c9e353a365d', '7d1d2d7900d043dca8bf34e1ae324e41', '雪茄', 15.0000, '0003', 'STOP', 0, '2011-01-08 14:23:14', '2013-06-03 08:07:14');
+INSERT INTO `order_uncompleted_order` VALUES ('78c7fcd2639e449a8120b064d80a69c6', '0bf399843dc9488cb5105e328de0d275', '98ddf62302354959bce7920193b503be', '黄鹤楼', 1.0000, '0001', 'CLOSE', 0, '2001-04-17 00:05:13', '2018-07-23 22:05:13');
+INSERT INTO `order_uncompleted_order` VALUES ('7ad38c6f876f4a50b9f8e2c83f3c187d', 'f3ffc67b4a7b49fc9a6dc363f327153e', 'f2d7441304a74fffabaa1393c3b020eb', '利群', 21.0000, '0001', 'UN_KNOW', 7, '2004-09-18 04:36:14', '2005-03-21 23:44:14');
+INSERT INTO `order_uncompleted_order` VALUES ('7e14ca9d32a641619fe60ce11381c58c', '47c9178a7d3246cb8ecbb428b65b6bbe', '77bfe4ad5354436ebcaa7681b9deb3b0', '雪茄', 4.0000, '1001', 'DELAY', 4, '2001-10-10 05:57:16', '2008-12-19 10:44:16');
+INSERT INTO `order_uncompleted_order` VALUES ('7fc2bdbb83714f9bb19e27745f3c3e4b', '87d6efb28c174ff6b142d0711c6a3a31', '7f7340f1bd0b4bc1a84e32fc1f3932ee', '芙蓉王', 20.0000, '0002', 'CLOSE', 0, '2008-05-14 15:43:18', '2014-03-04 20:08:18');
+INSERT INTO `order_uncompleted_order` VALUES ('80f6b73e8703434787164a13a42c1bc8', '109137858d494b4d9201c86444353d98', 'cab3968af7334708a0ed93e239267a80', '黄鹤楼', 27.0000, '0002', 'STOP', 0, '1998-12-01 12:50:14', '2002-12-18 17:25:14');
+INSERT INTO `order_uncompleted_order` VALUES ('814b0ce41e644c5cb9b1064db69accd8', '167f7c04ad754fd282e02edf1cde7c0c', 'c07ff59192224eea8fe6c14870d51558', '芙蓉王', 25.0000, '0002', 'CLOSE', 3, '2006-02-12 09:58:13', '2013-11-20 22:03:13');
+INSERT INTO `order_uncompleted_order` VALUES ('8247b01ff110482393900d1bf61724a5', '65cfbec0a583431885afd0fbcf458bde', '7f60f62a67574cfea45f42ee19fbb113', '红塔山', 7.0000, '0001', 'DELAY', 4, '2007-07-29 11:34:14', '2018-01-02 01:38:14');
+INSERT INTO `order_uncompleted_order` VALUES ('82c32ddf07f7459c9f09037adee36e7e', '75c3f40274244084a865d43baec0fc62', 'b7b811e30c7b40bfb0e9ba270ef07358', '雪茄', 16.0000, '0003', 'OPEN', 7, '2001-07-01 03:05:17', '2006-08-24 06:07:17');
+INSERT INTO `order_uncompleted_order` VALUES ('83185ad914e549e59c1ab33e77ebc079', '5e4c497775b74df98d1caedc87f8edee', '5721a947c82d4eb2ba21353a33953c96', '长白山', 24.0000, '0001', 'CLOSE', 3, '2005-06-18 00:29:13', '2008-11-20 09:36:13');
+INSERT INTO `order_uncompleted_order` VALUES ('8632258fba4a42ea89a722d316403662', 'ca9f21b56ded43f7958a6de7c91a9bef', 'eaee88102c564aa1999e6c24abaf65dd', '利群', 16.0000, '0001', 'DELAY', 0, '1990-12-18 12:22:14', '2005-01-25 17:57:14');
+INSERT INTO `order_uncompleted_order` VALUES ('8c26fc96170544f3b568173f4fb2ab09', '21a8036ecf4c4ca6aced3eda9ce6877d', '642c8f2d67234c9bae3d76afa0fab5fb', '芙蓉王', 22.0000, '0001', 'OPEN', 0, '2008-08-13 21:53:17', '2010-08-27 11:08:17');
+INSERT INTO `order_uncompleted_order` VALUES ('8cb36e6acb6240a3b0a76e80d657355b', '18e77714308c4da6b888286a2a7b01e9', '37333a3ef46a4e1e834311cb14331771', '雪茄', 28.0000, '0002', 'CLOSE', 6, '2015-12-03 03:13:14', '2018-12-11 07:24:14');
+INSERT INTO `order_uncompleted_order` VALUES ('8fc405f86e564669b03db823dab8a964', '76686261f0794c059bad35927ccec707', '2d9bdffb00ee406b9fcf8c10c1b3915c', '黄鹤楼', 8.0000, '0003', 'STOP', 8, '2007-09-09 02:58:14', '2007-10-27 00:04:14');
+INSERT INTO `order_uncompleted_order` VALUES ('9341d982989943b3a04b6355bade2b70', '536bd50316bd4f8dbe067d9ec9cfe42f', '288adaba8d524b5e92c033db9f4f4d46', '红塔山', 22.0000, '0001', 'STOP', 6, '2006-12-25 15:34:17', '2008-05-06 01:28:17');
+INSERT INTO `order_uncompleted_order` VALUES ('97698fdce51942848424ab38bf271527', 'fcd6ad68e2eb45c6b00c3558ad2f2244', 'a3f1ba601f884307abcccdf32de92e47', '雪茄', 22.0000, '1001', 'OPEN', 8, '1992-06-23 14:49:17', '2001-03-06 10:45:17');
+INSERT INTO `order_uncompleted_order` VALUES ('98413dd5be7c489fb486ba86d87e1e42', '676cf12a49d4453082796a394de86db1', 'b439f613972d49f4a90535665f3ce7ef', '芙蓉王', 2.0000, '0003', 'CLOSE', 7, '1997-09-16 12:01:14', '2001-01-20 09:45:14');
+INSERT INTO `order_uncompleted_order` VALUES ('9d3efb3c23da4d83a4f4960f4ee675ef', '868d2576338b41f9807f7e3627689162', 'afe2f46e09a6449987eba83beba27caf', '雪茄', 8.0000, '1001', 'OPEN', 6, '1996-08-29 21:50:13', '2000-08-06 06:09:13');
+INSERT INTO `order_uncompleted_order` VALUES ('9d88989ddaab44379ec3d483748a1351', '5fcf7f08e255496986f05e0f4361acfa', '23ff76e8bfbe414495ab68a793aa5ef8', '芙蓉王', 10.0000, '0002', 'OPEN', 8, '2015-12-04 23:53:16', '2015-12-15 23:22:16');
+INSERT INTO `order_uncompleted_order` VALUES ('9f4e0a9d107f4a748a0aa9b99ac9b245', '53fee255108d44d3bc5a5313174e1935', 'fe463c89ebdf4e148a03d2cf6929f64f', '黄鹤楼', 14.0000, '0003', 'DELAY', 4, '1994-03-14 14:03:18', '2000-05-28 01:20:18');
+INSERT INTO `order_uncompleted_order` VALUES ('9f7a723620884c7eb0c4ef78da04e8ea', 'd8068f43cdd342c1b947693b54a169b4', '58be39236e704945917bb6b72d91f102', '长白山', 29.0000, '0002', 'DELAY', 7, '2010-03-19 16:52:16', '2014-03-06 21:07:16');
+INSERT INTO `order_uncompleted_order` VALUES ('a99f38a86b5c457692739d16f1bcdf48', '52aa7dbe94814836b96fc2f486ac25d1', '0bc922d77b9749d9ba01dd1a1f9d21bd', '芙蓉王', 28.0000, '0002', 'OPEN', 8, '2009-04-04 15:12:18', '2013-06-04 09:00:18');
+INSERT INTO `order_uncompleted_order` VALUES ('aa894dfcf85d40a39177f68f7e2e6315', 'f2e9452923a44126bb27a76a6e8662d2', 'b77391192e4f4d0b92eda15abd039941', '黄鹤楼', 23.0000, '1001', 'UN_KNOW', 6, '1995-05-22 20:07:15', '2012-09-02 10:27:15');
+INSERT INTO `order_uncompleted_order` VALUES ('ac07b1da4bc040ee9149aaee7aaa9f31', '8017e4b7f85f49af87ee08c3741d930d', '659e4895e37a4997b4756e67090215d4', '芙蓉王', 28.0000, '1001', 'DELAY', 8, '1997-07-31 08:30:14', '2004-02-17 14:59:14');
+INSERT INTO `order_uncompleted_order` VALUES ('af42f1babe8142589c8cd3a2ac95f6e6', '640031a25a1a4243befb25d90de3bb91', 'bc6eb98230ae4f118ec50de27cc9de97', '小熊猫', 26.0000, '0003', 'CLOSE', 1, '1992-11-21 06:36:16', '2003-06-05 13:17:16');
+INSERT INTO `order_uncompleted_order` VALUES ('afa1e1dcc8484a48b60c11aa22625397', '03b07e3d96294f8ba97aa526d6209d9e', 'e6745d6c2864455ab0f6a594f3550dc6', '雪茄', 23.0000, '0002', 'STOP', 9, '1997-10-16 19:19:17', '2000-08-20 16:49:17');
+INSERT INTO `order_uncompleted_order` VALUES ('b0c64f7531d9497d9f72df3426a49a1f', 'bbb841dcf742421c87e72d3edc3789fe', '267110587a2f491f9f03d6114fd640f3', '小熊猫', 27.0000, '0001', 'UN_KNOW', 4, '1997-10-17 06:18:13', '2011-10-24 09:31:13');
+INSERT INTO `order_uncompleted_order` VALUES ('b103bf89dd2d4341b4327611a165a83f', '5a3bb5ed877945f2a505b0364804936c', '2eb8d19fa68c497daa658e481558ab1e', '利群', 2.0000, '0002', 'STOP', 2, '2007-03-20 12:08:16', '2016-04-05 20:18:16');
+INSERT INTO `order_uncompleted_order` VALUES ('b37cdcadc2484a0487f3f7f169ad30fc', '7e1ea33d73eb46c4884eba753758f983', 'd016d93fd96247a2b9bbd8451394241e', '芙蓉王', 10.0000, '1001', 'DELAY', 9, '2000-09-14 06:27:13', '2004-01-17 18:57:13');
+INSERT INTO `order_uncompleted_order` VALUES ('b418fd06bb564b8486568833bb674ad8', 'f17f590bfaf84c35bb9a947ffc21cc3d', '7e757083e0c747328a9f5df6b870ec64', '利群', 4.0000, '1001', 'STOP', 3, '2004-10-09 00:48:16', '2014-02-18 22:30:16');
+INSERT INTO `order_uncompleted_order` VALUES ('b4eb5974d5bc40268d0c4592e705ac40', 'f0fe78ab68e344f182311b9420795e46', '760e44cd5c24424aba6e4b93dfbc9266', '小熊猫', 24.0000, '1001', 'UN_KNOW', 4, '2001-09-04 13:41:17', '2015-01-29 03:45:17');
+INSERT INTO `order_uncompleted_order` VALUES ('b54c9286dd7d4bce90eba38dc34feb40', '6f5443b1b5bc4716be5960c027e17068', '341c641a695141d78aa63a7675c09649', '小熊猫', 23.0000, '1001', 'OPEN', 4, '2011-02-06 03:47:17', '2012-03-20 23:39:17');
+INSERT INTO `order_uncompleted_order` VALUES ('b5676df3fa3e419b912fd82e227a6b0c', '57b36a0e1efc4864b9ce4a552551e18f', 'cec66c627664478e90e51277efc9609f', '雪茄', 13.0000, '0001', 'OPEN', 3, '2003-05-18 02:05:19', '2013-03-06 14:49:19');
+INSERT INTO `order_uncompleted_order` VALUES ('b5a81fcefcd94ef0a0a2c72934431cb0', '8e875b601e114299b68ee9a447a93606', '59da49f093804958a41644955b01e721', '长白山', 29.0000, '1001', 'UN_KNOW', 0, '1993-10-09 23:40:18', '2006-06-28 19:09:18');
+INSERT INTO `order_uncompleted_order` VALUES ('b6e8985d21b342188f732c8b33b85c87', 'd5ef8f420ae64fe2869bdd2f1636a704', 'e92343e109cd47cb90aec28596f9f98c', '利群', 25.0000, '0001', 'UN_KNOW', 8, '1995-04-06 06:06:18', '2014-03-03 22:50:18');
+INSERT INTO `order_uncompleted_order` VALUES ('b8383a11a0774abea04b1ab290c0a8ad', '912b03f5d6874f2a886f227dc9993e5a', 'e45630c87a0c40dea486e48cce9d6005', '红塔山', 5.0000, '1001', 'DELAY', 8, '2005-03-30 13:28:13', '2013-06-09 19:19:13');
+INSERT INTO `order_uncompleted_order` VALUES ('bf69a3873ee94193b4a872b09da64972', '2f11e34cabdb4543ba3e3e6321cc21ed', '6a782f82a7f348a182d51c86846d5a09', '红塔山', 8.0000, '1001', 'STOP', 9, '2005-03-03 07:57:15', '2014-12-03 05:56:15');
+INSERT INTO `order_uncompleted_order` VALUES ('c6886f5cf674490487df203e57bad937', '672e6b06530e4e91890309e83ec4853d', '23bf2d39f81f4ce9832d4484e75c7976', '红塔山', 29.0000, '0001', 'OPEN', 2, '1995-11-08 00:35:17', '2001-01-11 12:01:17');
+INSERT INTO `order_uncompleted_order` VALUES ('c78f289f420c4b0c8bdc2e0fec814d92', '745b7d9e9f804dd2900760a704f13a96', '2cc585b2ebec46f69a9a92fe11c0d028', '芙蓉王', 12.0000, '0003', 'STOP', 2, '2010-07-20 09:06:14', '2015-05-13 08:14:14');
+INSERT INTO `order_uncompleted_order` VALUES ('c7aeaf4832524e6b8ee3131a9f9cbd93', 'c95a12c9f5bb42f78155f0efcc6b34b8', '836a0c475f56423abb72d5c86e8a638c', '小熊猫', 24.0000, '0002', 'CLOSE', 5, '1998-10-25 00:44:16', '2001-07-30 08:30:16');
+INSERT INTO `order_uncompleted_order` VALUES ('ca7cff4e41e1470a918b82a8129ae71a', '5af119c10d6d4672844267e1fd01d29e', 'aeee80f115d84d25aa922c340e07059a', '雪茄', 6.0000, '0003', 'STOP', 5, '2002-01-02 02:05:13', '2010-01-31 01:08:13');
+INSERT INTO `order_uncompleted_order` VALUES ('ccf25b525fa54600ae35119c5d858376', 'c1637c4aed23479391409a0ab38b93e2', '8dab30007c7b40d7bca4adf62ed35cea', '小熊猫', 21.0000, '0002', 'UN_KNOW', 6, '1983-07-29 07:23:18', '2002-02-03 08:51:18');
+INSERT INTO `order_uncompleted_order` VALUES ('cd62de07b7e5447ca4440d38c2ec3ffe', '9edff2347ff9488da6f3b1421b306aa2', '01fb42881a974744806e1247f1a64436', '小熊猫', 20.0000, '1001', 'OPEN', 3, '2002-06-29 10:28:17', '2005-03-18 14:21:17');
+INSERT INTO `order_uncompleted_order` VALUES ('ce27c7737a344e1a839e6a99ab85121f', '4c6f4ac09a734df0866c1d4452e3914a', '667947655d22487798c6c871e514c717', '小熊猫', 11.0000, '0003', 'UN_KNOW', 6, '2005-03-24 23:03:18', '2005-07-27 12:45:18');
+INSERT INTO `order_uncompleted_order` VALUES ('d0c077ecd1584547ae62593c1674dd02', '6c1f8f86d4944d5c8dba57c965dba284', '6f53cdbe930e4239aa63308b7bbe4dc6', '长白山', 3.0000, '0002', 'STOP', 7, '1992-12-24 21:07:19', '2004-11-25 15:29:19');
+INSERT INTO `order_uncompleted_order` VALUES ('d14dc9cc55994bea9817f7fe878a241b', 'b55c9907cc13424d97e9668028d13911', '51721c9e63664d5e9add3e78fde7c129', '长白山', 4.0000, '0003', 'CLOSE', 6, '1996-12-16 17:50:17', '2002-03-30 04:16:17');
+INSERT INTO `order_uncompleted_order` VALUES ('d41941fbd4904bea86e2c0772165b2de', 'ff9862bdae9348feb40d1a5c0cbf3f9c', '3ec1cf09fce7448093b34b8d6c3ce907', '利群', 5.0000, '0003', 'STOP', 0, '2003-04-20 16:40:15', '2013-09-01 23:28:15');
+INSERT INTO `order_uncompleted_order` VALUES ('d64e0341c6bb48e3a8be7345f3c9906f', '410545ee6749423e8c6de2afe4eb62a6', '641f54c6c1134580ba12ac4b636b9109', '黄鹤楼', 5.0000, '0003', 'OPEN', 2, '2006-03-04 07:34:18', '2011-04-16 10:03:18');
+INSERT INTO `order_uncompleted_order` VALUES ('d6e735cd49434428bb566df1740d6e5e', '0e8887b3a30e44d5948b00972cc54555', '3c382c47a2e348efbc4f31e5aa2a9ad1', '小熊猫', 26.0000, '0001', 'STOP', 6, '1998-08-20 16:00:18', '2011-05-13 23:02:18');
+INSERT INTO `order_uncompleted_order` VALUES ('dc0208c617cb4730b89077d9bf1cdc9e', '65334873d45f45d0bb579442082238dc', '0688a05cdfc84534987d07db62d8592d', '长白山', 2.0000, '0003', 'STOP', 7, '1999-01-29 09:38:16', '2006-01-10 23:21:16');
+INSERT INTO `order_uncompleted_order` VALUES ('e000619daaa149d1bbed3ab97bc3252d', 'ddf2b7d7788a4232846f8f31feff43b1', '35d8943f189f4121b68ceb358f153afc', '红塔山', 9.0000, '0002', 'CLOSE', 7, '1996-05-12 03:35:13', '2011-01-14 14:20:13');
+INSERT INTO `order_uncompleted_order` VALUES ('e1ed07aa39c744d6aa33ecc4cb6ae8bb', 'add14414c8c84d9d9ef0c971868c4b78', '268f489cc9454cdb8b69eb5da0617ae2', '雪茄', 28.0000, '1001', 'UN_KNOW', 4, '1990-02-07 03:59:16', '2006-12-02 17:13:16');
+INSERT INTO `order_uncompleted_order` VALUES ('e2f334bcf6074017811bcd263a9748ba', '108f2866abae4b3db67cc200466f2706', '7bb619eba07744b9b367491d29ad1b7a', '红塔山', 15.0000, '1001', 'CLOSE', 1, '1983-06-30 13:04:19', '2000-05-04 12:58:19');
+INSERT INTO `order_uncompleted_order` VALUES ('e3d545eaa99f4ba4aac67767a6978cc5', 'd80f55b18e384d5faf63be3f63bba13d', '72e3666d462d4fe9989ebc340ce2a6e8', '红塔山', 18.0000, '0001', 'CLOSE', 6, '1998-02-15 06:59:15', '2004-05-24 08:31:15');
+INSERT INTO `order_uncompleted_order` VALUES ('e47b9443aeed4c6380646e98c1ee4a08', '263cb498bab04ed3b62d49f57b430bd1', 'ce851f503d8648fcb2450dd388df7e2b', '利群', 0.0000, '0002', 'DELAY', 5, '1986-11-02 17:47:13', '2005-06-08 05:32:13');
+INSERT INTO `order_uncompleted_order` VALUES ('e88de13227f349d59422cec48a415155', '68ad656bd2bf45c8862e9190e5759003', '7ebc3429175544efaafb5b3a770edb35', '长白山', 5.0000, '1001', 'DELAY', 4, '2003-12-03 16:58:14', '2013-08-01 12:51:14');
+INSERT INTO `order_uncompleted_order` VALUES ('eb2823f55195421e9a18ac0ba9fe784c', '1ca2c43f59944d84ad65862b67e04cfe', '646a56dcb7864faaa44df0d5ef6cf455', '长白山', 2.0000, '0001', 'UN_KNOW', 8, '1996-07-24 19:08:17', '2009-06-14 19:42:17');
+INSERT INTO `order_uncompleted_order` VALUES ('eb64664e9ca24079a5b529f09ddb96f1', 'ab70afdf118d402b98612a1a21aaa084', '376f6293363f416eb0b500e7c8e47b2b', '芙蓉王', 2.0000, '0002', 'CLOSE', 4, '2003-02-15 00:42:18', '2015-02-16 09:48:18');
+INSERT INTO `order_uncompleted_order` VALUES ('ee33034d8b1148febb8165767c040a57', '2c5e908d81e94561bf5dd3efb2c04ed2', 'bc2f893b8ec84f20bad74da17460e704', '小熊猫', 14.0000, '0002', 'CLOSE', 4, '1994-10-06 04:09:17', '2006-11-30 14:31:17');
+INSERT INTO `order_uncompleted_order` VALUES ('ef9a285861494b09b0bbbc0d85d7e031', 'c336dbff3f6442329db995d8c7a10fe4', '47fee7b28906482ba06fb1f72b1258f7', '雪茄', 10.0000, '0003', 'CLOSE', 7, '1985-02-27 23:34:16', '2000-10-31 06:21:16');
+INSERT INTO `order_uncompleted_order` VALUES ('f1d8b4b2e1e44d1e8d501efaada4360c', '4f85b98ff6b7463d9df161e4f79e8a43', 'e09fc04d3b97491c9b96570ce6e1f4bc', '黄鹤楼', 18.0000, '1001', 'CLOSE', 4, '2007-12-28 15:16:14', '2011-07-18 06:18:14');
+INSERT INTO `order_uncompleted_order` VALUES ('f579555934134de59083e03f3fd67333', 'e4827dfcfdab4418970a5e70bea2bd76', 'a87fd0c1711a4a878a3a7dc01907ecb4', '利群', 26.0000, '0003', 'CLOSE', 2, '1988-02-05 20:05:15', '2001-03-28 16:31:15');
+INSERT INTO `order_uncompleted_order` VALUES ('f99cc9f613054a00a4b4ce2adbf70746', '785c809265404b9093257672ab77b29a', '248b77f2301b408ca4ad6cd0da390fd1', '小熊猫', 20.0000, '0002', 'UN_KNOW', 2, '1983-08-23 07:27:16', '2002-08-03 13:12:16');
+INSERT INTO `order_uncompleted_order` VALUES ('fad628889c6847928a76512250bd4b33', '81b834a258954b528d3b23cb961e3fcc', 'f2f99078eb1e4966816b1fa0e0e596a8', '小熊猫', 19.0000, '0001', 'STOP', 5, '2005-07-31 07:43:13', '2007-07-29 14:13:13');
+INSERT INTO `order_uncompleted_order` VALUES ('fcf31256547d4469a8078f8cc3368270', '0ebd235ab0d74e1688da79d3d91d3381', '046de20290dc42c6a28dafed1e4d625c', '黄鹤楼', 7.0000, '1001', 'UN_KNOW', 7, '1996-02-18 21:49:16', '2004-06-16 12:45:16');
+INSERT INTO `order_uncompleted_order` VALUES ('fd458776cb2a42bfa282f4e7853f72a7', 'ae212eb1b7254eb7954ffb4bcbb67df6', 'a024921d976b4e2bb30085d51d4fe2ad', '雪茄', 7.0000, '0003', 'UN_KNOW', 9, '1996-03-21 17:41:16', '2007-08-30 07:24:16');
+
+SET FOREIGN_KEY_CHECKS = 1;
