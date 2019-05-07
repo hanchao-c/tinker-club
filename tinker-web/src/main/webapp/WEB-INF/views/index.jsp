@@ -26,7 +26,7 @@
 	<link href="../assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css?v1" rel="stylesheet" />
 	<link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
 	<link href="../assets/plugins/bootstrap-sweetalert/sweetalert.css?v1" rel="stylesheet" />
-	<link href="../assets/css/style.custom.css?v5" rel="stylesheet" />
+	<link href="../assets/css/style.custom.css?v6" rel="stylesheet" />
 	<link href="../assets/plugins/select2/dist/css/select2.css?v1" rel="stylesheet" />
 	<link href="../assets/plugins/dropzone/basic.css?v1" rel="stylesheet" >
 	<link href="../assets/plugins/dropzone/dropzone.css?v5" rel="stylesheet">
