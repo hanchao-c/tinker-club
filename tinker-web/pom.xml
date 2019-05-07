@@ -25,6 +25,7 @@
 		<tk.mapper.version>4.1.5</tk.mapper.version>
 		<hikari.cp.version>2.6.0</hikari.cp.version>
 		<!-- inner -->
+		<tinker.asset.version>1.0.0</tinker.asset.version>
 		<order.provider.version>1.0.0</order.provider.version>
 		<payment.provider.version>1.0.0</payment.provider.version>
 	</properties>
@@ -138,6 +139,10 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+             <groupId>org.glassfish</groupId>
+             <artifactId>javax.el</artifactId>
+        </dependency>
 		<!-- db -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -205,10 +210,6 @@
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 		</dependency>
-		 <dependency>
-             <groupId>org.glassfish</groupId>
-             <artifactId>javax.el</artifactId>
-         </dependency>
 		<!-- httpclient -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -239,7 +240,7 @@
 		<dependency>
 			<groupId>org.tinker</groupId>
 			<artifactId>tinker-asset</artifactId>
-			<version>1.0.0</version>
+			<version>${tinker.asset.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.tinker</groupId>
@@ -279,6 +280,7 @@
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
+		
 		<resources>
 			<resource>
 				<directory>src/main/java</directory>
