@@ -8,7 +8,7 @@ http://139.199.107.128:8008/tinker-web/login
 
 ### 前端框架
  - Jquery 1.9
- - Bootstrap模板Color admin 3.0
+ - Bootstrap模板Color admin 3.0 (https://pan.baidu.com/s/1N-3-J3qUZot1B9QS1Tl80g 提取码vr87)
 
 ### 后台基础框架
  -  Spring 5  
@@ -96,4 +96,10 @@ test、prod环境日志不会输出在catalina.out中，具体存放位置请见
  - logger.error.path
 
 
- 
+  ---
+
+如项目存在问题，请添加作者qq 1585439743
+
+该项目仅供学习交流使用！
+
+
