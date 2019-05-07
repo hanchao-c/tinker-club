@@ -155,7 +155,7 @@
 				<configuration>
 					<verbose>true</verbose>
 					<overwrite>true</overwrite>
-					<configurationFile>src/main/resources/generatorConfig.xml</configurationFile>
+					<configurationFile>src/main/resources/generator-config.xml</configurationFile>
 				</configuration>
 				<dependencies>
 					<dependency>
