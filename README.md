@@ -94,11 +94,15 @@ test、prod环境日志不会输出在catalina.out中，具体存放位置请见
 
  - logger.info.path
  - logger.error.path
+ 
+  ---  
+### shiro问题
 
+在tinker-web中使用到shiro，为了简化开发，项目中未在controller中使用到shiro鉴权相关注解，同样没有在jsp中使用shiro tags进行按钮级别的权限，而是以页面作为权限控制
 
-  ---
-
-如项目存在问题，请添加作者qq 1585439743
+ ---
+ 
+如存在项目上的问题，请与作者交流沟通 qq 1585439743
 
 该项目仅供学习交流使用！
 
