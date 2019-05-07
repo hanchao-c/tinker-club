@@ -293,6 +293,7 @@
 				<directory>src/main/resources</directory>
 				<excludes>
 					<exclude>config-*/*.properties</exclude>
+					<exclude>generator/**</exclude>
 				</excludes>
 				<filtering>true</filtering>
 			</resource>
@@ -308,7 +309,7 @@
 			    <artifactId>maven-assembly-plugin</artifactId>
 			    <configuration>  
 			        <descriptors>
-                        <descriptor>src/main/resources/assembly-shiro-model.xml</descriptor>
+                        <descriptor>src/main/resources/generator/assembly-shiro-model.xml</descriptor>
                     </descriptors>
 			    </configuration>
 			</plugin>
@@ -324,8 +325,8 @@
 				<configuration>
 					<verbose>true</verbose>
 					<overwrite>true</overwrite>
-					<configurationFile>src/main/resources/generatorConfig-auth.xml</configurationFile>
-					<!-- <configurationFile>src/main/resources/generatorConfig-cms.xml</configurationFile> -->
+					<configurationFile>src/main/resources/generator/generator-config-auth.xml</configurationFile>
+					<!-- <configurationFile>src/main/resources/generator/generator-config-cms.xml</configurationFile> -->
 				</configuration>
 				<dependencies>
 					<dependency>
