@@ -3,10 +3,7 @@ package org.tinker.order.server.repository.tk.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "order_uncompleted_order")
 public class UncompletedOrder implements Serializable {
