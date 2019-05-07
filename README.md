@@ -33,6 +33,19 @@ http://139.199.107.128:8008/tinker-web/login
  - 安装并启动zookeeper3
 
  ---
+## 项目结构
+
+tinker-club 
+tinker-asset 工具、支持
+tinker-order 订单模块
+tinker-order-provider 订单服务dubbo接口
+tinker-order-server 订单服务
+tinker-payment 支付模块
+tinker-payment-provider 支付服务dubbo接口
+tinker-payment-server 支付服务
+tinker-web 后台页面展示
+
+ ---
  
 ## 项目启动
 
@@ -48,6 +61,30 @@ http://139.199.107.128:8008/tinker-web/login
 
 ## 开发必读
 
+
+### mybatis代码生成
+
+使用Mybatis官方提供的代码生成插件 mybatis-generator-maven-plugin （见pom.xml plugins）
+maven运行 mybatis-generator:generate进行myabtis相关代码生成
+注：tinker-web下，如果需要重新生成auth_user， auth_role， auth_permission，需要在生成之前maven执行assembly:single，确保tinker-web-shiro-model.jar存在
+
+
+### 环境切换
+ 
+ 环境        | 打包命令  |  配置文件  |  备注  
+ -------------   | -------------  | -------------  | -------------
+ 本地        | clean package -Plocal  | resources/config-local/* | 本地环境clean package即可 
+ 测试        | clean package -Ptest   | resources/config-test/* |
+ 生产        | clean package -Pprod   | resources/config-prod/* |
+ 
+根据pom.xml中profiles实现不同环境不同配置文件的打包方式，如果打包不加入参数-P，比如在本地启动项目时，会读取config-local下的配置文件
+ 
+### 日志 
+
+test、prod环境日志不会输出在catalina.out中，具体存放位置请见配置 
+
+ - logger.info.path
+ - logger.error.path
 
 
  
