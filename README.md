@@ -35,6 +35,8 @@ http://139.199.107.128:8008/tinker-web/login
  ---
 ## 项目结构
 
+！这是一个由zk + dubbo开发的分布式项目！
+
 tinker-club 
 
 tinker-asset 工具、支持
