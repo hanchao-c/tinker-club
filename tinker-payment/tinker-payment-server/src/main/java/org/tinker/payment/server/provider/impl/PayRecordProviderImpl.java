@@ -44,6 +44,5 @@ public class PayRecordProviderImpl implements PayRecordProvider {
 			return transfer;
 		});
 	}
-	
 
 }

@@ -12,7 +12,7 @@
 	</dubbo:application>
   	
 	<dubbo:registry protocol="zookeeper" address="${dubbo.registry.zookeeper.address}" 
-	file="${user.home}/dubbo-cache/${spring.application.name}.dubbo.cache" check="false" />
+	file="../dubbo-cache/${spring.application.name}.dubbo.cache" check="false" />
 	
 	<dubbo:protocol name="dubbo" port="${dubbo.protocol.port}" />
 	

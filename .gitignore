@@ -4,3 +4,4 @@ target
 .classpath
 .externalToolBuilders
 tinker-club-logs/
+dubbo-cache/
