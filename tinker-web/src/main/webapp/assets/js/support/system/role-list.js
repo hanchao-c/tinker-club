@@ -33,13 +33,13 @@ function deleteThis(id){
 	Confirm.danger({
 		"title" : "确定删除?"
 	}, function(params) {
-		AjaxHelper.del({
+		/*AjaxHelper.del({
 			"url" : "../roles/" + id,
 			"success" : function(data) {
 				Notification.success("删除成功");
 				table.reload();
 			}
-		});
+		});*/
 	});
 }
 

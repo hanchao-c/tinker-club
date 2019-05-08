@@ -294,13 +294,13 @@ function initCascadeMenu(){
 									"title" : "确定删除?",
 									"text" : "删除当前菜单包括子菜单?"
 								}, function(params){
-									AjaxHelper.del({
+									/*AjaxHelper.del({
 										"url" : "../permissions/" + obj.id,
 										"success" : function(data){
 											inst.delete_node(inst.get_selected());
 											Notification.success("删除成功");
 										}
-									});	
+									});	*/
 								});
 							}
 						}
@@ -334,13 +334,13 @@ function initCascadeMenu(){
 }
 
 function deleteById(id) {
-	AjaxHelper.del({
+	/*AjaxHelper.del({
 		"url" : "../permissions/" + id,
 		"success" : function(data){
 			inst.delete_node(inst.get_selected());
 			Notification.success("删除成功");
 		}
-	});			
+	});		*/	
 }
 function openEdit(id){
 	$modal.showModal();

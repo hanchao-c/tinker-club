@@ -123,7 +123,7 @@ var _YGewJm41_$resetPasswordForm, _YGewJm41_$resetPasswordModal;
 
 		function _YGewJm41_resetPassword(){
 			if(_YGewJm41_$resetPasswordForm.isValidForm()){
-				AjaxHelper.patch({
+				/*AjaxHelper.patch({
 					"url" : "../authc/password",
 					"data" : {
 						"password" : $("#password-new-97702de7842a27b947bb590518822544").val()
@@ -132,6 +132,6 @@ var _YGewJm41_$resetPasswordForm, _YGewJm41_$resetPasswordModal;
 						_YGewJm41_$resetPasswordModal.hideModal();
 						Notification.success("修改密码成功");
 					}
-				});
+				});*/
 			}
 		}

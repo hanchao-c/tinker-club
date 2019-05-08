@@ -131,7 +131,7 @@ function openRefreshPassword(id) {
 
 function refreshPassword(){
 	if($form_password.isValidForm()){
-		AjaxHelper.patch({
+		/*AjaxHelper.patch({
 			"url" : "../users/password",
 			"data" : {
 				"userId" : $("#password-id").val(),
@@ -141,7 +141,7 @@ function refreshPassword(){
 				$modal_password.hideModal();
 				Notification.success("修改成功");
 			}
-		});
+		});*/
 	}
 }
 
@@ -150,13 +150,13 @@ function deleteThis(id){
 		"title" : "确定删除?",
 		"text" : "用户删除后,当前账号将无法使用"
 	}, function(params) {
-		AjaxHelper.del({
+		/*AjaxHelper.del({
 			"url" : "../users/" + id,
 			"success" : function(data){
 				Notification.success("删除成功");
 				table.reload();
 			}
-		});
+		});*/
 	});
 }
 function openCreate() {

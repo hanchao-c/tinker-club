@@ -202,6 +202,6 @@
 			_YGewJm41_initMenu(_YGewJm41_menus);
 		});
 	</script>
-	<script type="text/javascript" src="../assets/js/support/index.min.js?v6"></script>
+	<script type="text/javascript" src="../assets/js/support/index.js"></script>
 </body>
 </html>
