@@ -52,9 +52,9 @@ function deleteThis(id){
 function openCreate() {
 	//跳转到目标子页面
 	//window.location.href = "#cms/watch-create";
-	$.redirect("#cms/watch/watch-create");
+	$.redirect("#cms/watch-create");
 }
 
 function openEdit(id){
-	$.redirect("#cms/watch/watch-edit", {"id" : id});
+	$.redirect("#cms/watch-edit", {"id" : id});
 }
