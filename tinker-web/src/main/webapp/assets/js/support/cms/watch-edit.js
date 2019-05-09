@@ -98,7 +98,7 @@ function initWatchInfo(id) {
 				"title" : "记录不存在",
 				"showCancelButton" : false
 			}, function(params){
-				$.redirect("#cms/watch/watch-list");
+				$.redirect("#cms/watch-list");
 			});
 		}
 	});
@@ -137,7 +137,7 @@ function edit() {
 				}, function(){
 					Notification.success("修改成功")
 					//history.go(-1); 特殊情况不能返回列表
-					$.redirect("#cms/watch/watch-list");
+					$.redirect("#cms/watch-list");
 				});
 			}
 		});

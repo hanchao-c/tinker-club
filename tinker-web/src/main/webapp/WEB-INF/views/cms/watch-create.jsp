@@ -111,7 +111,7 @@
 							</div>
 						</div>
 						<div class="col-md-offset-2">
-							<a href="#cms/watch/watch-list" class="btn btn-white" >返回</a>
+							<a href="#cms/watch-list" class="btn btn-white" >返回</a>
 							<a href="javascript:;" class="btn btn-success" onclick="create()">保存</a>
 						</div>
 					</form>
@@ -123,4 +123,4 @@
     </div>
     <!-- end row -->
 </div>
-<script type="text/javascript" src="../assets/js/support/cms/watch-create.js"></script>
+<script type="text/javascript" src="../assets/js/support/cms/watch-create.js?v1"></script>

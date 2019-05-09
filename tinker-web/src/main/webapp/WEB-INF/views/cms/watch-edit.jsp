@@ -112,7 +112,7 @@
 							</div>
 						</div>
 						<div class="col-md-offset-2">
-							<a href="#cms/watch/watch-list" class="btn btn-white" >返回</a>
+							<a href="#cms/watch-list" class="btn btn-white" >返回</a>
 							<a href="javascript:;" class="btn btn-success" onclick="edit()">保存</a>
 						</div>
 					</form>
@@ -124,7 +124,7 @@
     </div>
     <!-- end row -->
 </div>
-<script type="text/javascript" src="../assets/js/support/cms/watch-edit.js"></script>
+<script type="text/javascript" src="../assets/js/support/cms/watch-edit.js?v1"></script>
 <script type="text/javascript">
 	var id = '${id}';
 	$(function(){

@@ -115,7 +115,7 @@ function create() {
 					"showCancelButton" : false
 				}, function(){
 					//history.go(-1); 特殊情况不能返回列表
-					$.redirect("#cms/watch/watch-list");
+					$.redirect("#cms/watch-list");
 				});
 			}
 		});
