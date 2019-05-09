@@ -37,13 +37,13 @@
 
 
 * tinker-club 
-    * tinker-asset 工具、支持
-    * tinker-order 订单模块
-        * tinker-order-provider 订单服务dubbo接口
-        * tinker-order-server 订单服务
+    * tinker-asset `工具、支持`
+    * tinker-order `订单模块`
+        * tinker-order-provider `订单服务dubbo接口`
+        * tinker-order-server `订单服务`
     * tinker-payment 支付模块
-        * tinker-payment-provider 支付服务dubbo接口
-        * tinker-payment-server 支付服务
+        * tinker-payment-provider `支付服务dubbo接口`
+        * tinker-payment-server `支付服务`
     * tinker-web 后台页面展示
 
 
@@ -53,9 +53,9 @@
 ## 项目启动
 
  - 项目运行前请确保项目的配置信息是正确可用的，如各组件连接地址、mysql账号密码、redis密码、zookeeper端口等
- - 运行tinker-order-server的org.tinker.order.server.Application的main函数以启动订单服务
- - 运行tinker-payment-server的org.tinker.payment.server.Application的main函数以启动支付服务
- - 使用tomcat启动tinker-web
+ - 运行`tinker-order-server`的`org.tinker.order.server.Application`的main函数以启动订单服务
+ - 运行`tinker-payment-server`的`org.tinker.payment.server.Application`的main函数以启动支付服务
+ - 使用tomcat启动`tinker-web`
  - 访问http://localhost:8080/tinker-web 账号 ：admin 密码 ：admin123
 
 注 ：本地环境相关配置文件存放在各项目src/main/resources下的config-local文件夹
