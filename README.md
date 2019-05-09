@@ -28,8 +28,8 @@
 ## 环境安装及配置
 
  - 安装jdk8
- - 安装并启动mysql5，建立数据库，系统所需所有脚本在tinker-club的document/sql下（需先建立数据库，数据库名称可以与脚本名称一致，如tinker-auth, tinker-order）
- - 安装并启动redis3，建议设置密码 （设置密码 ： 启动redis服务并进入redis客户端 执行 config set requirepass "123456"）
+ - 安装并启动mysql5，建立数据库，系统所需所有脚本在`tinker-club`的`document/sql`下（需先建立数据库，数据库名称可以与脚本名称一致，如tinker-auth, tinker-order）
+ - 安装并启动redis3，建议设置密码 （设置密码 ： 启动redis服务并进入redis客户端 执行 `config set requirepass "123456"`）
  - 安装并启动zookeeper3
 
  ---
@@ -58,7 +58,7 @@
  - 使用tomcat启动`tinker-web`
  - 访问http://localhost:8080/tinker-web 账号 ：admin 密码 ：admin123
 
-注 ：本地环境相关配置文件存放在各项目src/main/resources下的config-local文件夹
+注 ：本地环境相关配置文件存放在各项目`src/main/resources`下的`config-local`文件夹
 
 这是一个由zk + dubbo开发的分布式项目！
 
