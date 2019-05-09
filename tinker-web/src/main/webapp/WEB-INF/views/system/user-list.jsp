@@ -125,4 +125,4 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="../assets/js/support/system/user-list.js"></script>
+<script type="text/javascript" src="../assets/js/support/system/user-list.js?v_1"></script>

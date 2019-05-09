@@ -830,4 +830,4 @@
 	</div>
 </div>
 <script type="text/javascript" src="../assets/plugins/jstree/dist/jstree.js?v4"></script>
-<script type="text/javascript" src="../assets/js/support/system/permission-list.js"></script>
+<script type="text/javascript" src="../assets/js/support/system/permission-list.js?v_1"></script>
