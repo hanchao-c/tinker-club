@@ -37,19 +37,15 @@
 
 ！这是一个由zk + dubbo开发的分布式项目！
 
->tinker-club 
-
->>tinker-asset 工具、支持
-
->>tinker-order 订单模块
->>>tinker-order-provider 订单服务dubbo接口
->>>tinker-order-server 订单服务
-
->>tinker-payment 支付模块
->>>tinker-payment-provider 支付服务dubbo接口
->>>tinker-payment-server 支付服务
-
->>tinker-web 后台页面展示
+> tinker-club 
+> tinker-asset 工具、支持
+> tinker-order 订单模块
+> tinker-order-provider 订单服务dubbo接口
+> tinker-order-server 订单服务
+> tinker-payment 支付模块
+> tinker-payment-provider 支付服务dubbo接口
+> tinker-payment-server 支付服务
+> tinker-web 后台页面展示
 
 
  ---
@@ -104,20 +100,4 @@ test、prod环境日志不会输出在catalina.out中，具体存放位置请见
 
 该项目仅供学习交流使用！
 
-
-> 文字被些字符包围  
->  
-> 只要再文字前面加上>空格即可  
->  
-> 如果你要换行的话,新起一行,输入>空格即可,后面不接文字  
-> 但> 只能放在行首才有效  
-  
-### 文字被些字符包围,多重包围  
-> 文字被些字符包围开始  
->  
-> > 只要再文字前面加上>空格即可  
->  
->  > > 如果你要换行的话,新起一行,输入>空格即可,后面不接文字  
->  
-> > > > 但> 只能放在行首才有效
 
