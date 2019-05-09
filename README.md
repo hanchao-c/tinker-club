@@ -34,8 +34,23 @@
  - 安装并启动zookeeper3
 
  ---
-## 项目结构
+ 
+## 项目启动
 
+ - **这是一个由zookeeper + dubbo作为rpc开发的分布式项目**
+ - 项目运行前请确保项目的配置信息是正确可用的，如各组件连接地址、mysql账号密码、redis密码、zookeeper端口等
+ - 运行`tinker-order-server`的`org.tinker.order.server.Application`的**main**函数以启动订单服务
+ - 运行`tinker-payment-server`的`org.tinker.payment.server.Application`的**main**函数以启动支付服务
+ - 使用**tomcat**启动`tinker-web`
+ - 访问http://localhost:8080/tinker-web 账号 ：admin 密码 ：admin123
+
+注 ：本地环境相关配置文件存放在各项目`src/main/resources`下的`config-local`文件夹
+
+ ---
+
+## 开发必读
+
+### 项目结构
 
 * tinker-club 
     * tinker-asset `工具、支持`
@@ -50,24 +65,6 @@
 
 
  ---
- 
-## 项目启动
-
- - **这是一个由zookeeper + dubbo作为rpc开发的分布式项目**
- - 项目运行前请确保项目的配置信息是正确可用的，如各组件连接地址、mysql账号密码、redis密码、zookeeper端口等
- - 运行`tinker-order-server`的`org.tinker.order.server.Application`的**main**函数以启动订单服务
- - 运行`tinker-payment-server`的`org.tinker.payment.server.Application`的**main**函数以启动支付服务
- - 使用**tomcat**启动`tinker-web`
- - 访问http://localhost:8080/tinker-web 账号 ：admin 密码 ：admin123
-
-注 ：本地环境相关配置文件存放在各项目`src/main/resources`下的`config-local`文件夹
-
-
-
- ---
-
-## 开发必读
-
 
 ### mybatis代码生成
 
