@@ -3,7 +3,7 @@
 <!-- ================== BEGIN PAGE LEVEL JS ================== -->
 <script>
     App.restartGlobalFunction();
-    App.setPageTitle('商品清单 - 手表管理');
+    App.setPageTitle('商品清单 - 手表展示');
 </script>
 <!-- ================== END PAGE LEVEL JS ================== -->
 
@@ -13,7 +13,7 @@
     <ol class="breadcrumb pull-left">
         <li><a href="javascript:;">主页</a></li>
         <li><a href="javascript:;">商品清单</a></li>
-        <li class="active">手表管理</li>
+        <li class="active">手表展示</li>
     </ol>
     <!-- end breadcrumb -->
     
