@@ -1,23 +1,21 @@
 ## 演示地址
 
-[tinker后台管理系统](http://139.199.107.128:8080/tinker-web/login "")
- 
-账号：admin，密码：admin123
+[tinker后台管理系统](http://139.199.107.128:8080/tinker-web/login "")  账号：admin 密码：admin123
 
 ---
 
 ## 技术选型
 
 ### 前端框架
- - Jquery 1.9
- - [Bootstrap模板Color admin 3.0](https://pan.baidu.com/s/1N-3-J3qUZot1B9QS1Tl80g "前端模板") 百度云盘 提取码vr87
+ - jquery 1.9
+ - [bootstrap3 模板Color admin 3.0](https://pan.baidu.com/s/1N-3-J3qUZot1B9QS1Tl80g "前端模板") （百度云盘 提取码vr87）
 
 ### 后台基础框架
- -  Spring 5  
- -  SpringMVC 5 
- -  Shiro  
- -  Mybatis + tkmapper
- -  apache dubbo
+ -  spring 5  
+ -  springMVC 5 
+ -  shiro  
+ -  mybatis + tkmapper
+ -  apache-dubbo
 
 ## 运行环境
 
@@ -39,23 +37,23 @@
 
 ！这是一个由zk + dubbo开发的分布式项目！
 
-tinker-club 
+>tinker-club 
 
-tinker-asset 工具、支持
+>>tinker-asset 工具、支持
 
-tinker-order 订单模块
+>>tinker-order 订单模块
 
-tinker-order-provider 订单服务dubbo接口
+>>>tinker-order-provider 订单服务dubbo接口
 
-tinker-order-server 订单服务
+>>>tinker-order-server 订单服务
 
-tinker-payment 支付模块
+>>tinker-payment 支付模块
 
-tinker-payment-provider 支付服务dubbo接口
+>>>tinker-payment-provider 支付服务dubbo接口
 
-tinker-payment-server 支付服务
+>>>tinker-payment-server 支付服务
 
-tinker-web 后台页面展示
+>>tinker-web 后台页面展示
 
 
  ---
