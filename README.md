@@ -38,13 +38,21 @@
 ！这是一个由zk + dubbo开发的分布式项目！
 
 > tinker-club 
+
 > tinker-asset 工具、支持
+
 > tinker-order 订单模块
+
 > tinker-order-provider 订单服务dubbo接口
+
 > tinker-order-server 订单服务
+
 > tinker-payment 支付模块
+
 > tinker-payment-provider 支付服务dubbo接口
+
 > tinker-payment-server 支付服务
+
 > tinker-web 后台页面展示
 
 
