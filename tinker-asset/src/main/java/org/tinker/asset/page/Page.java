@@ -30,16 +30,6 @@ public interface Page<T> extends Serializable{
 	 */
 	boolean isEmpty();
 	
-//	
-//	
-//	default int getRecordsTotal() {
-//		return getTotal();
-//	}
-//	
-//	default int getRecordsFiltered() {
-//		return getTotal();
-//	}
-	
 	
 	/**
 	 * 类型转换
