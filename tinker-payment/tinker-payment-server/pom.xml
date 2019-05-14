@@ -15,7 +15,6 @@
 	
 	<properties>
 		<order.provider.version>1.0.0</order.provider.version>
-		<dubbo.rpc.version>2.7.0</dubbo.rpc.version>
 	</properties>
 	
 	<dependencies>

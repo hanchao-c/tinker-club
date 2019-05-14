@@ -37,7 +37,7 @@
 		</rollingPolicy>
 	</appender>
 	
-	<logger name="org.tinker.order.server.repository" level="DEBUG" />
+	<!-- <logger name="org.tinker.order.server.repository" level="DEBUG" /> -->
 	
     <root level="INFO">
         <appender-ref ref="${logger.appender}" />

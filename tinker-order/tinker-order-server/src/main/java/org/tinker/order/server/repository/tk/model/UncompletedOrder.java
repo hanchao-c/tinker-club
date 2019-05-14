@@ -23,7 +23,7 @@ public class UncompletedOrder implements Serializable {
      * 订单id
      */
     @Column(name = "order_id")
-    private String orderId;
+    private Long orderId;
 
     /**
      * 商品名称
@@ -119,11 +119,11 @@ public class UncompletedOrder implements Serializable {
      *
      * @return order_id - 订单id
      */
-    public String getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
 
-    public UncompletedOrder withOrderId(String orderId) {
+    public UncompletedOrder withOrderId(Long orderId) {
         this.setOrderId(orderId);
         return this;
     }
@@ -133,8 +133,8 @@ public class UncompletedOrder implements Serializable {
      *
      * @param orderId 订单id
      */
-    public void setOrderId(String orderId) {
-        this.orderId = orderId == null ? null : orderId.trim();
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
     /**

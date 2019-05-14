@@ -36,6 +36,7 @@
 		</javaClientGenerator>
 		
 		<table enableCountByExample="false" schema="tinker-order" tableName="order_uncompleted_order" domainObjectName="UncompletedOrder" />
+		<table enableCountByExample="false" schema="tinker-order" tableName="order_protocol" domainObjectName="Protocol" />
 		
 	</context>
 </generatorConfiguration>

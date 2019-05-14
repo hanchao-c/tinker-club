@@ -32,7 +32,7 @@ public class ObjectConvertResult implements Serializable {
 	 /**
      * 订单id
      */
-	private String orderId;
+	private Long orderId;
 
 	/**
      * 商品名称

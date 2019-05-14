@@ -15,6 +15,7 @@
 	
 	<properties>
 		<payment.provider.version>1.0.0</payment.provider.version>
+		<sharding-sphere.version>4.0.0-RC1</sharding-sphere.version>
 	</properties>
 	
 	<dependencies>
@@ -95,6 +96,22 @@
 			<artifactId>tinker-order-provider</artifactId>
 			<version>${order.provider.version}</version>
 		</dependency>
+		<!-- shrading-jdbc -->
+		<dependency>
+		    <groupId>org.apache.shardingsphere</groupId>
+		    <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+		    <version>${sharding-sphere.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.shardingsphere</groupId>
+		    <artifactId>sharding-jdbc-spring-namespace</artifactId>
+		    <version>${sharding-sphere.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-dbcp2</artifactId>
+		</dependency>
+				
 	</dependencies>
 	
 	<profiles>

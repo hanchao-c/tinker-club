@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.tinker.order.server.repository.tk.mapper.UncompletedOrderMapper">
-  <resultMap id="BaseResultMap" type="org.tinker.order.server.repository.tk.model.UncompletedOrder">
+<mapper namespace="org.tinker.order.server.repository.tk.mapper.ProtocolMapper">
+  <resultMap id="BaseResultMap" type="org.tinker.order.server.repository.tk.model.Protocol">
     <!--
       WARNING - @mbg.generated
     -->
     <id column="id" jdbcType="CHAR" property="id" />
-    <result column="user_id" jdbcType="CHAR" property="userId" />
-    <result column="order_id" jdbcType="BIGINT" property="orderId" />
-    <result column="product_name" jdbcType="VARCHAR" property="productName" />
-    <result column="amount" jdbcType="DECIMAL" property="amount" />
-    <result column="pay_state" jdbcType="VARCHAR" property="payState" />
-    <result column="order_state" jdbcType="VARCHAR" property="orderState" />
-    <result column="payment_times" jdbcType="INTEGER" property="paymentTimes" />
-    <result column="order_time" jdbcType="TIMESTAMP" property="orderTime" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="item" jdbcType="VARCHAR" property="item" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -84,10 +76,9 @@
     <!--
       WARNING - @mbg.generated
     -->
-    id, user_id, order_id, product_name, amount, pay_state, order_state, payment_times, 
-    order_time, create_time
+    id, item
   </sql>
-  <select id="selectByExample" parameterType="org.tinker.order.server.repository.tk.model.UncompletedOrderExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.tinker.order.server.repository.tk.model.ProtocolExample" resultMap="BaseResultMap">
     <!--
       WARNING - @mbg.generated
     -->
@@ -96,7 +87,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from order_uncompleted_order
+    from order_protocol
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -104,11 +95,11 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="org.tinker.order.server.repository.tk.model.UncompletedOrderExample">
+  <delete id="deleteByExample" parameterType="org.tinker.order.server.repository.tk.model.ProtocolExample">
     <!--
       WARNING - @mbg.generated
     -->
-    delete from order_uncompleted_order
+    delete from order_protocol
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -117,37 +108,13 @@
     <!--
       WARNING - @mbg.generated
     -->
-    update order_uncompleted_order
+    update order_protocol
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=CHAR},
       </if>
-      <if test="record.userId != null">
-        user_id = #{record.userId,jdbcType=CHAR},
-      </if>
-      <if test="record.orderId != null">
-        order_id = #{record.orderId,jdbcType=BIGINT},
-      </if>
-      <if test="record.productName != null">
-        product_name = #{record.productName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.amount != null">
-        amount = #{record.amount,jdbcType=DECIMAL},
-      </if>
-      <if test="record.payState != null">
-        pay_state = #{record.payState,jdbcType=VARCHAR},
-      </if>
-      <if test="record.orderState != null">
-        order_state = #{record.orderState,jdbcType=VARCHAR},
-      </if>
-      <if test="record.paymentTimes != null">
-        payment_times = #{record.paymentTimes,jdbcType=INTEGER},
-      </if>
-      <if test="record.orderTime != null">
-        order_time = #{record.orderTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.createTime != null">
-        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      <if test="record.item != null">
+        item = #{record.item,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -158,17 +125,9 @@
     <!--
       WARNING - @mbg.generated
     -->
-    update order_uncompleted_order
+    update order_protocol
     set id = #{record.id,jdbcType=CHAR},
-      user_id = #{record.userId,jdbcType=CHAR},
-      order_id = #{record.orderId,jdbcType=BIGINT},
-      product_name = #{record.productName,jdbcType=VARCHAR},
-      amount = #{record.amount,jdbcType=DECIMAL},
-      pay_state = #{record.payState,jdbcType=VARCHAR},
-      order_state = #{record.orderState,jdbcType=VARCHAR},
-      payment_times = #{record.paymentTimes,jdbcType=INTEGER},
-      order_time = #{record.orderTime,jdbcType=TIMESTAMP},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP}
+      item = #{record.item,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
