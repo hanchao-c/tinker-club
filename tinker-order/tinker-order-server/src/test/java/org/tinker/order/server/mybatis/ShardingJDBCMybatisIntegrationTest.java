@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.shardingsphere.core.strategy.keygen.SnowflakeShardingKeyGenerator;
 import org.assertj.core.util.Lists;
 import org.junit.Assert;

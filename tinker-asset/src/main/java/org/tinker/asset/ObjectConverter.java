@@ -29,9 +29,7 @@ public interface ObjectConverter {
 		if(CollectionUtils.isEmpty(sources)) {
 			return Collections.emptyList();
 		}
-		return sources.stream().map(source -> {
-			return convert(source, clazz);
-		}).collect(Collectors.toList());
+		return sources.stream().map(source -> convert(source, clazz)).collect(Collectors.toList());
 	}
 	
 	/**
