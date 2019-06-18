@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.function.Function;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.tinker.asset.ObjectConverter;
 
 /**
@@ -28,7 +29,9 @@ public interface Page<T> extends Serializable{
 	 * 是否存在数据
 	 * @return
 	 */
-	boolean isEmpty();
+	default boolean isEmpty(){
+		return CollectionUtils.isEmpty(getContent());
+	}
 	
 	
 	/**

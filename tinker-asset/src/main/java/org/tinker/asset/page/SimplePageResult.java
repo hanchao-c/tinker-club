@@ -7,6 +7,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.ObjectUtils;
 import org.tinker.asset.ObjectConverter;
 
 import lombok.Getter;
@@ -20,7 +21,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class SimplePageResult<T> implements Page<T>{
+public class SimplePageResult<T> implements Page<T> {
 
 	/**
 	 * 
@@ -49,10 +50,6 @@ public class SimplePageResult<T> implements Page<T>{
 		this(0, Collections.emptyList());
 	}
 	
-	public boolean isEmpty() {
-		return CollectionUtils.isEmpty(this.content);
-	}
-
 	@Override
 	public <M> Page<M> mapTo(Class<M> clazz) {
 		return mapTo(clazz, null);
@@ -60,13 +57,8 @@ public class SimplePageResult<T> implements Page<T>{
 	
 	@Override
 	public <M> Page<M> mapTo(Class<M> clazz, ObjectConverter converter) {
-		final ObjectConverter objectConverter;
-		if(null == converter) {
-			objectConverter = ObjectConverter.CGLIB_BEAN_COPIER;
-		}else {
-			objectConverter = converter;
-		}
-		return this.map(source -> objectConverter.convert(source, clazz));
+		ObjectConverter finalConverter = ObjectUtils.defaultIfNull(converter, ObjectConverter.CGLIB_BEAN_COPIER);
+		return this.map(source -> finalConverter.convert(source, clazz));
 	}
 	
 	@Override
@@ -78,7 +70,6 @@ public class SimplePageResult<T> implements Page<T>{
 		List<M> mappedContent = this.content.stream().map(mapper).collect(Collectors.toList());
 		return new SimplePageResult<M>(this.total, mappedContent);
 	}
-	
 	
 	public static <S> SimplePageResult<S> empty() {
 		return new SimplePageResult<>();

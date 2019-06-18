@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import org.tinker.asset.EnumTemplateDeserializer;
+import org.tinker.asset.JacksonEnumTemplateDeserializer;
 import org.tinker.order.asset.constant.OrderState;
 import org.tinker.order.asset.constant.PayState;
 
@@ -47,13 +47,13 @@ public class ObjectConvertResult implements Serializable {
 	/**
      * 支付状态
      */
-	@JsonDeserialize(using = EnumTemplateDeserializer.class)
+	@JsonDeserialize(using = JacksonEnumTemplateDeserializer.class)
 	private PayState payState;
 
 	/**
      * 状态
      */
-	@JsonDeserialize(using = EnumTemplateDeserializer.class)
+	@JsonDeserialize(using = JacksonEnumTemplateDeserializer.class)
 	private OrderState orderState;
 
 	/**

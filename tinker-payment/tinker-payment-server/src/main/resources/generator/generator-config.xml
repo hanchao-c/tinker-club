@@ -35,7 +35,13 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		
-		<table enableCountByExample="false" schema="tinker-payment" tableName="payment_pay_record" domainObjectName="PayRecord" />
+		<!-- <table enableCountByExample="false" schema="tinker-payment" tableName="payment_pay_record" domainObjectName="PayRecord" /> -->
+		
+		<table enableCountByExample="false" schema="tinker-payment" tableName="payment_type" domainObjectName="PayType">
+			<columnOverride column="payment_state" javaType="org.tinker.payment.asset.constant.PaymentState" />
+			<columnOverride column="payment_type" javaType="org.tinker.payment.asset.constant.PaymentType" />
+		</table>
+		
 		
 	</context>
 </generatorConfiguration>
