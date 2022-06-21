@@ -27,7 +27,7 @@
         <tk.mybatis.mapper.version>2.1.5</tk.mybatis.mapper.version>
 		<mybatis.generator.version>1.3.7</mybatis.generator.version>
 		<org.mybatis.mapper.version>2.0.0</org.mybatis.mapper.version>
-		<mysql.driver.version>5.1.47</mysql.driver.version>
+		<mysql.driver.version>8.0.28</mysql.driver.version>
 	</properties>
 
 	<dependencies>
